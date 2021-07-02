@@ -10,8 +10,6 @@ app.use(express.urlencoded());
 app.use(express.json());
 
 // Define Routes
-app.use("/api/users", require("./api/users"));
-app.use("/api/comment", require("./api/comment"));
 
 // error handler
 app.use(function (err, req, res, next) {
