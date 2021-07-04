@@ -10,6 +10,10 @@ app.use(express.urlencoded());
 app.use(express.json());
 
 // Define Routes
+/*
+Search API
+*/
+app.use("/search", require("./api/search"));
 
 // error handler
 app.use(function (err, req, res, next) {
