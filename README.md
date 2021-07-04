@@ -11,7 +11,7 @@
 ######  어? 예퓸다. 퓸며들준비, R U Ready? 🔫
 |               [최다인](https://github.com/Chedda98)         |        [한수아](https://github.com/sssua-0928)       |        [김정재](https://github.com/Jeongggjae)              |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | 
-| <img src="https://user-images.githubusercontent.com/68318945/124396405-49c39080-dd44-11eb-92ef-49d598444107.png" height="200" /> | <img src="https://user-images.githubusercontent.com/68318945/124396445-8becd200-dd44-11eb-9e6f-b030def1bd3a.png" height="200" /> |  <img src="https://user-images.githubusercontent.com/68318945/124396445-8becd200-dd44-11eb-9e6f-b030def1bd3a.png" height="200" /> |
+| <img src="https://user-images.githubusercontent.com/68318945/124396405-49c39080-dd44-11eb-92ef-49d598444107.png" height="250" /> | <img src="https://user-images.githubusercontent.com/68318945/124396445-8becd200-dd44-11eb-9e6f-b030def1bd3a.png" height="250" /> |  <img src="https://user-images.githubusercontent.com/68318945/124396445-8becd200-dd44-11eb-9e6f-b030def1bd3a.png" height="250" /> |
 
 <br>
 
