@@ -21,6 +21,7 @@ const PerfumeSchema = new mongoose.Schema({
   },
   colors: {
     type: [String],
+    require: true,
   },
   style_id: {
     type: mongoose.SchemaTypes.ObjectId,
