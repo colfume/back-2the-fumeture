@@ -1,4 +1,3 @@
-import { IColor } from "./IColor";
 import { IStyle } from "./IStyle";
 import { IMood } from "./IMood";
 import { IPalette } from "./IPalette";
@@ -8,7 +7,7 @@ export interface IPerfume {
   brand: string;
   capacity: string;
   price: string;
-  color_id: [IColor];
+  colors: Array<Number>;
   style_id: [IStyle];
   mood_id: [IMood];
   top: string;
@@ -23,7 +22,7 @@ export interface IPerfumeInputDTO {
   brand: string;
   capacity: string;
   price: string;
-  color_id: [IColor];
+  colors: Array<Number>;
   style_id: [IStyle];
   mood_id: [IMood];
   top: string;
