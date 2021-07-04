@@ -12,11 +12,11 @@ const PerfumeSchema = new mongoose.Schema({
     require: true,
   },
   capacity: {
-    type: Number,
+    type: String,
     require: true,
   },
   price: {
-    type: Number,
+    type: String,
     require: true,
   },
   color_id: {
