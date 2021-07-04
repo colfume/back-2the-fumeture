@@ -1,4 +1,3 @@
-import { IColor } from "./IColor";
 import { IStyle } from "./IStyle";
 import { IMood } from "./IMood";
 import { IPalette } from "./IPalette";
