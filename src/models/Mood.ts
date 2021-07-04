@@ -7,10 +7,11 @@ const MoodSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+}, {
+  versionKey : false //버전키 생성하지 않음
 });
 
 export default mongoose.model<IMood & mongoose.Document>(
   "Mood",
   MoodSchema
 );
-
