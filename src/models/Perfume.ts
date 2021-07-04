@@ -11,11 +11,30 @@ const PerfumeSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  color_id: {
-    type: mongoose.SchemaTypes.ObjectId,
+  capacity: {
+    type: String,
     require: true,
-    ref: "Color"
   },
+  price: {
+    type: String,
+    require: true,
+  },
+  colors: [
+    {
+      color1: {
+        type: Number,
+        require: true,
+      },
+      color2: {
+        type: Number,
+        require: true,
+      },
+      color3: {
+        type: Number,
+        require: true,
+      },
+    },
+  ],
   style_id: {
     type: mongoose.SchemaTypes.ObjectId,
     require: true,
@@ -51,11 +70,11 @@ const PerfumeSchema = new mongoose.Schema({
     require: true,
     ref: "Palette"
   },
-
+}, {
+  versionKey : false //버전키 생성하지 않음
 });
 
 export default mongoose.model<IPerfume & mongoose.Document>(
   "Perfume",
   PerfumeSchema
 );
-

@@ -10,10 +10,10 @@ app.use(express.urlencoded());
 app.use(express.json());
 
 // Define Routes
-/*
-Search API
-*/
-app.use("/search", require("./api/search"));
+app.use("/api/search", require("./api/search"));
+
+//Search API
+// app.use("/search", require("./api/search"));
 
 // error handler
 app.use(function (err, req, res, next) {
@@ -30,7 +30,7 @@ app
   .listen(4300, () => {
     console.log(`
     ################################################
-    🛡️  Server listening on port: 5000 🛡️
+    🛡️  Server listening on port: 4300 🛡️
     ################################################
 `);
   })
