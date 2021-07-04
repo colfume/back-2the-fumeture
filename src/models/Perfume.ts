@@ -59,11 +59,11 @@ const PerfumeSchema = new mongoose.Schema({
     require: true,
     ref: "Palette"
   },
-
+}, {
+  versionKey : false //버전키 생성하지 않음
 });
 
 export default mongoose.model<IPerfume & mongoose.Document>(
   "Perfume",
   PerfumeSchema
 );
-
