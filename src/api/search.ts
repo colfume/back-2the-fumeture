@@ -13,7 +13,6 @@ router.get("/getkeyword", async (req, res) => {
   try {
       const moods = await Mood.find();
       const styles = await Style.find();
-      //res.json([{moods: moods, message: "무드 불러오기 성공"},{ styles: styles, message: "스타일 불러오기 성공"}]);
       res.json({moods: moods, styles: styles, message: "무드, 스타일 불러오기 성공"});
 
   } catch (error) {
@@ -21,6 +20,5 @@ router.get("/getkeyword", async (req, res) => {
       res.status(500).send("Server Error");
   }
 });
-
 
 module.exports = router;
