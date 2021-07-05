@@ -44,18 +44,6 @@ router.get("/filter/:moodName", async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
-  try {
-    const { perfume_name, brand, color_id, style_id, mood_id, description, top, middle, base, perfume_img, palette_id} = req.body;
-    const perfume = new Perfume({
-      perfume_name, brand, color_id, style_id, mood_id, description, top, middle, base, perfume_img, palette_id
-    })
-
-  } catch (error) {
-      console.error(error.message);
-      res.status(500).send("Server Error");
-  }
-});
 
 
 module.exports = router;
