@@ -55,7 +55,7 @@
 ## 💜 Dependencies
 ```json
 {
-  "name": "seminar",
+  "name": "back-2the-fumeture",
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
