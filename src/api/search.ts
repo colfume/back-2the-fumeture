@@ -12,6 +12,7 @@ const router = express.Router();
 router.get("/getkeyword", async (req, res) => {
   try {
       const moods = await Mood.find();
+      console.log(moods);
       const styles = await Style.find();
       //res.json([{moods: moods, message: "무드 불러오기 성공"},{ styles: styles, message: "스타일 불러오기 성공"}]);
       res.json({moods: moods, styles: styles, message: "무드, 스타일 불러오기 성공"});
@@ -21,6 +22,22 @@ router.get("/getkeyword", async (req, res) => {
       res.status(500).send("Server Error");
   }
 });
+
+router.post("/", async (req, res) => {
+  try{
+    const { mood_name } = req.body;
+
+    const Moods = new Mood({
+        mood_name: mood_name
+    });
+
+    await Moods.save();
+    res.json(Moods);
+  }catch (error) {
+    console.error(error.message);
+    res.status(500).send("Server Error");
+  }
+})
 
 router.get("/filter/:moodName", async (req, res) => {
   try {
