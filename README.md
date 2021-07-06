@@ -3,7 +3,7 @@
 
 ## Find Your Colfume, 컬퓸에서 당신의 색을 찾아보세요!
 > SOPT 28기 18TH APPJAM - TEAM Colfume💨  
-2020.12.26 ~ 2021.01.16
+2021.06.26 ~ 2021.07.17
 
 <br>
 
@@ -46,8 +46,7 @@
 <br>
 
 ## 💙 Architecture
-여기 아키텍쳐 사진 기깔난거 넣을 예정ㅋ
-우리 히든카드 사진도 아직 안 넣음ㅋ
+![colfume 서버 아키텍쳐](https://user-images.githubusercontent.com/68318945/124633433-3ccbac00-dec0-11eb-9f97-7677635cf792.png)
 
 <br>
 
@@ -65,6 +64,7 @@
   },
   "dependencies": {
     "@types/cors": "^2.8.10",
+    "@types/multer": "^1.4.6",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
@@ -73,6 +73,7 @@
     "gravatar": "^1.8.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "5.12.10",
+    "multer": "^1.4.2",
     "request": "^2.88.2"
   },
   "devDependencies": {

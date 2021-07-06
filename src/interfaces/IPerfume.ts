@@ -5,8 +5,8 @@ import { IPalette } from "./IPalette";
 export interface IPerfume {
   perfume_name: string;
   brand: string;
-  capacity: Array<String>;
-  price: Array<String>;
+  capacity: string;
+  price: string;
   colors: Array<Number>;
   styles: [IStyle];
   moods: [IMood];
@@ -20,8 +20,8 @@ export interface IPerfume {
 export interface IPerfumeInputDTO {
   perfume_name: string;
   brand: string;
-  capacity: Array<String>;
-  price: Array<String>;
+  capacity: string;
+  price: string;
   colors: Array<Number>;
   styles: [IStyle];
   moods: [IMood];
