@@ -88,37 +88,6 @@ const PerfumeSchema = new mongoose.Schema({
       _id : false
     },
   ],
-<<<<<<< HEAD
-  styles: [
-    {
-      style1: {
-        type: String,
-        require: true,
-      },
-      style2: {
-        type: String,
-      },
-      style3: {
-        type: String,
-      },
-    },
-  ],
-  moods: [
-    {
-      mood1: {
-        type: String,
-        require: true,
-      },
-      mood2: {
-        type: String,
-      },
-      mood3: {
-        type: String,
-      },
-    },
-  ],
-=======
->>>>>>> 67cc686cd1f8550545e005c98691153d66ef924b
   description: {
     type: String,
     require: true,
