@@ -29,14 +29,22 @@ router.get("/filter/:moodName", async (req, res) => {
         { mood_name : req.params.moodName },
         { attributes: ['_id']}
       );
-      
-      moodId = moodId._id;
+
+      moodId = moodId._id.toString();
       console.log(moodId);
 
-      let filtered_perfume = await Perfume.find(
-        { "moods.0.mood1" : moodId },
-        { attributes: ['_id']}
+      let filtered_perfume = await Perfume.find().or(
+        [
+          {"moods.0.mood1" : moodId},
+          {"moods.0.mood2" : moodId},
+          {"moods.0.mood3" : moodId}
+        ],
       );
+      
+
+
+      
+      console.log(filtered_perfume);
       //.populate('mood', ['mood_name']);
 
 
