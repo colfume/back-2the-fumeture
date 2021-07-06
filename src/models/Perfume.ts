@@ -23,6 +23,7 @@ const PerfumeSchema = new mongoose.Schema({
       capacity3: {
         type: String,
       },
+      _id : false
     },
   ],
   price: [
@@ -37,6 +38,7 @@ const PerfumeSchema = new mongoose.Schema({
       price3: {
         type: String,
       },
+      _id : false
     },
   ],
   colors: [
@@ -53,8 +55,40 @@ const PerfumeSchema = new mongoose.Schema({
         type: Number,
         require: true,
       },
+      _id : false
     },
   ],
+  styles: [
+    {
+      style1: {
+        type: String,
+        require: true,
+      },
+      style2: {
+        type: String,
+      },
+      style3: {
+        type: String,
+      },
+      _id : false
+    },
+  ],
+  moods: [
+    {
+      mood1: {
+        type: String,
+        require: true,
+      },
+      mood2: {
+        type: String,
+      },
+      mood3: {
+        type: String,
+      },
+      _id : false
+    },
+  ],
+<<<<<<< HEAD
   styles: [
     {
       style1: {
@@ -83,6 +117,8 @@ const PerfumeSchema = new mongoose.Schema({
       },
     },
   ],
+=======
+>>>>>>> 67cc686cd1f8550545e005c98691153d66ef924b
   description: {
     type: String,
     require: true,
