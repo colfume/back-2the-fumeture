@@ -11,36 +11,12 @@ const PerfumeSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  capacity: [
-    {
-      capacity1: {
-        type: String,
-        require: true,
-      },
-      capacity2: {
-        type: String,
-      },
-      capacity3: {
-        type: String,
-      },
-      _id : false
-    },
-  ],
-  price: [
-    {
-      price1: {
-        type: String,
-        require: true,
-      },
-      price2: {
-        type: String,
-      },
-      price3: {
-        type: String,
-      },
-      _id : false
-    },
-  ],
+  capacity: {
+    type: String,
+  },
+  price: {
+    type: String,
+  },
   colors: [
     {
       color1: {
