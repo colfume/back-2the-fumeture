@@ -39,12 +39,15 @@ const PerfumeSchema = new mongoose.Schema({
       style1: {
         type: String,
         require: true,
+        ref: "Style"
       },
       style2: {
         type: String,
+        ref: "Style"
       },
       style3: {
         type: String,
+        ref: "Style"
       },
       _id : false
     },
@@ -54,14 +57,17 @@ const PerfumeSchema = new mongoose.Schema({
       mood1: {
         type: String,
         require: true,
+        ref: "Mood"
       },
       mood2: {
         type: String,
+        ref: "Mood"
       },
       mood3: {
         type: String,
+        ref: "Mood"
       },
-      _id : false
+      _id : false,
     },
   ],
   description: {
