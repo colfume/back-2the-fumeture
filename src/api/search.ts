@@ -29,26 +29,19 @@ router.get("/filter/:moodName", async (req, res) => {
         { mood_name : req.params.moodName },
         { attributes: ['_id']}
       );
-
-      moodId = moodId._id.toString();
       console.log(moodId);
+      moodId = moodId._id.toString();
 
-      let filtered_perfume = await Perfume.find().or(
+      const filtered_perfume = await Perfume.find().or(
         [
           {"moods.0.mood1" : moodId},
           {"moods.0.mood2" : moodId},
           {"moods.0.mood3" : moodId}
         ],
-      );
-      
+      ).select(["perfume_name"]).populate("moods");
+      let perfumes = filtered_perfume[0];
 
-
-      
-      console.log(filtered_perfume);
-      //.populate('mood', ['mood_name']);
-
-
-      res.json({moods: filtered_perfume, message: "무드 향수 정보 불러오기 성공"});
+      res.json({moods: perfumes, message: "무드 향수 정보 불러오기 성공"});
 
   } catch (error) {
       console.error(error.message);
