@@ -29,7 +29,6 @@ router.get("/filter/:moodName", async (req, res) => {
         { mood_name : req.params.moodName },
         { attributes: ['_id']}
       );
-      console.log(moodId);
       moodId = moodId._id.toString();
 
       const filtered_perfume = await Perfume.find().or(
@@ -38,10 +37,27 @@ router.get("/filter/:moodName", async (req, res) => {
           {"moods.0.mood2" : moodId},
           {"moods.0.mood3" : moodId}
         ],
-      ).select(["perfume_name"]).populate("moods");
-      let perfumes = filtered_perfume[0];
+      )
+      .select(["perfume_name"])
+      .populate({
+          path: "moods",
+          populate: [{
+            path: "mood1",
+            options: { retainNullValues: true }
+          },
+          {
+            path: "mood2",
+            options: { retainNullValues: true }
+          },        
+          {
+            path: "mood3",
+            options: { retainNullValues: true }
+          },          
+          ]   
+        },
+      )
 
-      res.json({moods: perfumes, message: "무드 향수 정보 불러오기 성공"});
+      res.json({pefumes_mood: filtered_perfume, message: "무드 향수 정보 불러오기 성공"});
 
   } catch (error) {
       console.error(error.message);
