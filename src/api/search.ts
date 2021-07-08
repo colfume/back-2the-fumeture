@@ -116,6 +116,24 @@ router.get("/:keyword", async (req, res) => {
       { perfume_name: { $regex: req.params.keyword } },
       { brand: { $regex: req.params.keyword } },
       ]
+    ).
+    select(["perfume_name"])
+    .populate({
+      path: "moods",
+      populate: [{
+        path: "mood1",
+        options: { retainNullValues: true }
+      },
+      {
+        path: "mood2",
+        options: { retainNullValues: true }
+      },        
+      {
+        path: "mood3",
+        options: { retainNullValues: true }
+      },          
+      ]   
+    },
     );
     if (!result){
       return res.status(400).json("데이터 없음");
