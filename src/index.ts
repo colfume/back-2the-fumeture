@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Define Routes
 app.use("/api/search", require("./api/search"));
-app.use("/api/colfumetest", require("./api/colfumetest"));
+//app.use("/api/colfumetest", require("./api/colfumetest"));
 
 //Search API
 // app.use("/search", require("./api/search"));
