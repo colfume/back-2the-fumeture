@@ -118,11 +118,30 @@ router.post("/colfumetest", async (req, res) => {
     const max_color = Math.max.apply( null, colorPalette );
     console.log(max_color);
     // 5. Palette 테이블에서 이름이 같은 컬럼을 찾고, 반환합니다. 
+    const result = await Palette.findOne(
+      { palette_name : palette_name },
+      { attributes: ['_id']}
+    );
 
-    let result = await Palette.findOne({
+    if(palette : palette_name === max_color)  {
+      return true;
+    }
+      
+    }
+    const result = arr.find(isMaxColor);
+
+    function isApple(element)  {
+      if(element.name === 'apple')  {
+        return true;
+      }
+    }
+    const apples = colorPalette.filter(isApple);
+
+    /*
+    const result = await Palette.findOne({
       max_color,
     }).populate("palette", ["palette_name"]);
-
+    */
     if (!result) {
       return res.status(400).json({ msg: "Profile not found" });
     }
