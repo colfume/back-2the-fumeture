@@ -10,7 +10,7 @@ import Palette from "../models/Palette";
 
 const router = express.Router();
 
-router.get("/getkeyword", async (req, res) => {
+router.get("/keyword", async (req, res) => {
   try {
       const moods = await Mood.find();
       const styles = await Style.find();
@@ -18,7 +18,7 @@ router.get("/getkeyword", async (req, res) => {
 
   } catch (error) {
       console.error(error.message);
-      res.status(500).send("Server Error");
+      res.status(500).send("서버 내부 에러입니다.");
   }
 });
 
@@ -61,7 +61,7 @@ router.get("/filter/:moodName", async (req, res) => {
 
   } catch (error) {
       console.error(error.message);
-      res.status(500).send("Server Error");
+      res.status(500).send("서버 내부 에러입니다.");
   }
 });
 
@@ -104,7 +104,45 @@ router.get("/filter/style/:styleName", async (req, res) => {
 
   } catch (error) {
       console.error(error.message);
-      res.status(500).send("Server Error");
+      res.status(500).send("서버 내부 에러입니다.");
+  }
+});
+
+// 제품이름, 브랜드이름
+router.get("/:keyword", async (req, res) => {
+  try {
+
+    let result = await Perfume.find().or([
+      { perfume_name: { $regex: req.params.keyword } },
+      { brand: { $regex: req.params.keyword } },
+      ]
+    ).
+    select(["perfume_name"])
+    .populate({
+      path: "moods",
+      populate: [{
+        path: "mood1",
+        options: { retainNullValues: true }
+      },
+      {
+        path: "mood2",
+        options: { retainNullValues: true }
+      },        
+      {
+        path: "mood3",
+        options: { retainNullValues: true }
+      },          
+      ]   
+    },
+    );
+    if (!result){
+      return res.status(400).json("데이터 없음");
+    }
+    return res.status(200).json({ data: result });
+
+  } catch (error) {
+      console.error(error.message);
+      res.status(500).send("서버 내부 에러입니다.");
   }
 });
 
