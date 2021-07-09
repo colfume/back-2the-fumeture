@@ -74,13 +74,18 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "5.12.10",
     "multer": "^1.4.2",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "swagger-cli": "^4.0.4",
+    "swagger-ui-express": "^4.1.6",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/express": "^4.17.11",
     "@types/mongoose": "^5.10.4",
     "@types/node": "^14.17.0",
+    "@types/swagger-ui-express": "^4.1.3",
+    "@types/yamljs": "^0.2.31",
     "nodemon": "^2.0.7",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.3"
