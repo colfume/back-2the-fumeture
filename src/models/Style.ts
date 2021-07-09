@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import { IStyle } from "../interfaces/IStyle";
 
-
 const StyleSchema = new mongoose.Schema({
   style_name: {
     type: String,

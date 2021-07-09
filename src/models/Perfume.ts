@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import { IPerfume } from "../interfaces/IPerfume";
 
-
 const PerfumeSchema = new mongoose.Schema({
   perfume_name: {
     type: String,
@@ -16,6 +15,10 @@ const PerfumeSchema = new mongoose.Schema({
   },
   price: {
     type: String,
+  },
+  vitality: {
+    type: String,
+    require: true,
   },
   colors: [
     {
