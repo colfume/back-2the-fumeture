@@ -6,7 +6,7 @@ import Palette from "../models/Palette";
 
 const router = express.Router();
 
-router.get("/home/palette", async (req, res) => {
+router.get("/palette", async (req, res) => {
   try {
     const palettes = await Palette.find();
     if (!palettes) {
@@ -19,7 +19,7 @@ router.get("/home/palette", async (req, res) => {
   }
 });
 
-router.get("/home/product", async (req, res) => {
+router.get("/product", async (req, res) => {
   try {
     const result = await Perfume.find({
       attributes: ['_id', 'perfume_name']
