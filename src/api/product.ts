@@ -6,33 +6,40 @@ const router = express.Router();
 
 router.get("/palette", async (req, res) => {
   try {
-    const palettes = await Palette.find();
-    if (!palettes) {
+    const result = await Palette.find();
+    if (!result) {
       return res.status(400).send("필요한 값이 없습니다.");
     }
-    res.status(200).json({ palettes, message: "팔레트 색상 불러오기 성공했습니다." });
+    res.status(200).json({ data: result, message: "팔레트 색상 불러오기 성공했습니다." });
   } catch (error) {
     console.error(error.message);
     res.status(500).send("서버 내부 에러입니다.");
   }
 });
 
-router.get("/product", async (req, res) => {
+router.get("/page", async (req, res) => {
   try {
-    const result = await Perfume.find({
-      attributes: ['_id', 'perfume_name']
-    })
+    const result = await Perfume.find()
+    .select("perfume_name")
     .populate({
       path: "moods",
       populate: [{
         path: "mood1",
+        options: { retainNullValues: true }
+      },
+      {
+        path: "mood2",
+        options: { retainNullValues: true }
+      },
+      {
+        path: "mood3",
         options: { retainNullValues: true }
       }]
     });
     if (!result) {
       return res.status(400).send("필요한 값이 없습니다.");
     }
-    res.status(200).json({ result, message: "프로덕트 페이지 불러오기 성공했습니다." });
+    res.status(200).json({ data: result, message: "프로덕트 페이지 불러오기 성공했습니다." });
   } catch (error) {
     console.error(error.message);
     res.status(500).send("서버 내부 에러입니다.");
@@ -45,7 +52,7 @@ router.get("/detail", async (req, res) => {
     if (!result) {
       return res.status(400).send("필요한 값이 없습니다.");
     }
-    res.status(200).json({ result, message: "상세 페이지 불러오기 성공했습니다." });
+    res.status(200).json({ data: result, message: "상세 페이지 불러오기 성공했습니다." });
   } catch (error) {
     console.error(error.message);
     res.status(500).send("서버 내부 에러입니다.");
