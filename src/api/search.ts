@@ -108,4 +108,42 @@ router.get("/filter/style/:styleName", async (req, res) => {
   }
 });
 
+// 제품이름, 브랜드이름
+router.get("/:keyword", async (req, res) => {
+  try {
+
+    let result = await Perfume.find().or([
+      { perfume_name: { $regex: req.params.keyword } },
+      { brand: { $regex: req.params.keyword } },
+      ]
+    ).
+    select(["perfume_name"])
+    .populate({
+      path: "moods",
+      populate: [{
+        path: "mood1",
+        options: { retainNullValues: true }
+      },
+      {
+        path: "mood2",
+        options: { retainNullValues: true }
+      },        
+      {
+        path: "mood3",
+        options: { retainNullValues: true }
+      },          
+      ]   
+    },
+    );
+    if (!result){
+      return res.status(400).json("데이터 없음");
+    }
+    return res.status(200).json({ data: result });
+
+  } catch (error) {
+      console.error(error.message);
+      res.status(500).send("Server Error");
+  }
+});
+
 module.exports = router;
