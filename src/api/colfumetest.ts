@@ -24,7 +24,7 @@ router.post("/colfumetest", async (req, res) => {
     }
     // 3. 질문에 따른 컬러 가중치를 계산합니다.
     // 3. 컬러를 선언해줍니다. (컬러 총 8개)
-    const red : number | String = 0;
+    const red : number = 0;
     const red2 = 0;
     const orange : number = 0;
     const vanila : number = 0;
@@ -118,40 +118,33 @@ router.post("/colfumetest", async (req, res) => {
     const max_color = Math.max.apply( null, colorPalette );
     console.log(max_color);
     // 5. Palette 테이블에서 이름이 같은 컬럼을 찾고, 반환합니다. 
-    const result = await Palette.findOne(
-      { palette_name : palette_name },
-      { attributes: ['_id']}
-    );
+    const palettes = await Palette.findOne({
+      attributes: ['_id', 'palette_name']
+    });
 
-    if(palette : palette_name === max_color)  {
-      return true;
-    }
-      
-    }
-    const result = arr.find(isMaxColor);
+    const result: string = '';
 
-    function isApple(element)  {
-      if(element.name === 'apple')  {
-        return true;
-      }
+    if ( palettes.palette_name === max_color ) {
+      const result = palettes.palette_name;
+      return result;
     }
-    const apples = colorPalette.filter(isApple);
 
+    if (!result) {
+      return res.status(400).json({ message: "가장 높은 값이 없습니다." });
+    }
     /*
     const result = await Palette.findOne({
       max_color,
     }).populate("palette", ["palette_name"]);
     */
-    if (!result) {
-      return res.status(400).json({ msg: "Profile not found" });
-    }
+    
     // 4-1. 컬러반환이 잘 됐을 경우
-    return res.status(200).send("결과를 가져와").json(result);
-
-  } catch (err) {
+    res.status(200).json({ result, message: "컬퓸테스트 결과조회 성공했습니다." });
+  } catch (error) {
     // 4-2. 컬러반환에 실패했을 경우
-      console.log(err);
-      return res.status(500).send("결과 불러오기 실패");
+    console.error(error.message);
+      return res.status(500).send("서버 내부 에러입니다.");
     }
 });
+
 module.exports = router;
