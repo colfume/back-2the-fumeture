@@ -14,7 +14,7 @@ router.get("/keyword", async (req, res) => {
   try {
       const moods = await Mood.find();
       const styles = await Style.find();
-      res.json({moods: moods, styles: styles, message: "무드, 스타일 불러오기 성공"});
+      res.json({ moods: moods, styles: styles, message: "무드, 스타일 불러오기 성공" });
 
   } catch (error) {
       console.error(error.message);
@@ -27,7 +27,7 @@ router.get("/filter/:moodName", async (req, res) => {
 
       let moodId = await Mood.findOne(
         { mood_name : req.params.moodName },
-        { attributes: ['_id']}
+        { attributes: ['_id'] }
       );
       moodId = moodId._id.toString();
 
@@ -57,7 +57,7 @@ router.get("/filter/:moodName", async (req, res) => {
       },
     )
 
-      res.json({pefumes_mood: filtered_perfume, message: "무드 향수 정보 불러오기 성공"});
+      res.json({ data: filtered_perfume, message: "무드 향수 정보 불러오기 성공" });
 
   } catch (error) {
       console.error(error.message);
@@ -70,15 +70,15 @@ router.get("/filter/style/:styleName", async (req, res) => {
 
       let styleId = await Style.findOne(
         { style_name : req.params.styleName },
-        { attributes: ['_id']}
+        { attributes: ['_id'] }
       );
       styleId = styleId._id.toString();
 
       const filtered_perfume = await Perfume.find().or(
         [
-          {"styles.0.style1" : styleId},
-          {"styles.0.style2" : styleId},
-          {"styles.0.style3" : styleId}
+          { "styles.0.style1" : styleId },
+          { "styles.0.style2" : styleId },
+          { "styles.0.style3" : styleId }
         ],
       )
       .select(["perfume_name"])
@@ -100,7 +100,7 @@ router.get("/filter/style/:styleName", async (req, res) => {
         },
       )
 
-      res.json({pefumes_style: filtered_perfume, message: "스타일 향수 정보 불러오기 성공"});
+      res.json({ data: filtered_perfume, message: "스타일 향수 정보 불러오기 성공" });
 
   } catch (error) {
       console.error(error.message);
@@ -112,7 +112,7 @@ router.get("/filter/style/:styleName", async (req, res) => {
 router.get("/:keyword", async (req, res) => {
   try {
 
-    let result = await Perfume.find().or([
+    const result = await Perfume.find().or([
       { perfume_name: { $regex: req.params.keyword } },
       { brand: { $regex: req.params.keyword } },
       ]
@@ -135,8 +135,8 @@ router.get("/:keyword", async (req, res) => {
       ]   
     },
     );
-    if (!result){
-      return res.status(400).json("데이터 없음");
+    if (!result) {
+      return res.status(400).json("필요한 값이 없습니다.");
     }
     return res.status(200).json({ data: result });
 
