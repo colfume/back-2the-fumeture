@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import { IPalette } from "../interfaces/IPalette";
 
-
 const PaletteSchema = new mongoose.Schema({
   palette_name: {
     type: String,
