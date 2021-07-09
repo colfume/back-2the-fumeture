@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import { ISection } from "../interfaces/ISection";
 
-
 const SectionSchema = new mongoose.Schema({
   section_name: {
     type: String,
