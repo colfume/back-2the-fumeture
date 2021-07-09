@@ -19,7 +19,7 @@ router.get("/recommand", async (req, res) => {
       path: "section_perfumes",
         populate: [{
           path: "perfume1",
-          select: [ 'perfume_img' ],
+          select: [ 'perfume_img', 'perfume_name' ],
           options: { retainNullValues: true },
           populate: [{
             path: "moods",
@@ -40,7 +40,7 @@ router.get("/recommand", async (req, res) => {
         },
         {
           path: "perfume2",
-          select: [ 'perfume_img' ],
+          select: [ 'perfume_img', 'perfume_name' ],
           options: { retainNullValues: true },
           populate: [{
             path: "moods",
@@ -61,7 +61,7 @@ router.get("/recommand", async (req, res) => {
         },        
         {
           path: "perfume3",
-          select: [ 'perfume_img' ],
+          select: [ 'perfume_img', 'perfume_name' ],
           options: { retainNullValues: true },
           populate: [{
             path: "moods",
@@ -82,7 +82,7 @@ router.get("/recommand", async (req, res) => {
         }, 
         {
           path: "perfume4",
-          select: [ 'perfume_img' ],
+          select: [ 'perfume_img', 'perfume_name' ],
           options: { retainNullValues: true },
           populate: [{
             path: "moods",
@@ -103,7 +103,7 @@ router.get("/recommand", async (req, res) => {
         }, 
         {
           path: "perfume5",
-          select: [ 'perfume_img' ],
+          select: [ 'perfume_img', 'perfume_name' ],
           options: { retainNullValues: true },
           populate: [{
             path: "moods",
@@ -124,7 +124,7 @@ router.get("/recommand", async (req, res) => {
         }, 
         {
           path: "perfume6",
-          select: [ 'perfume_img' ],
+          select: [ 'perfume_img', 'perfume_name' ],
           options: { retainNullValues: true },
           populate: [{
             path: "moods",
