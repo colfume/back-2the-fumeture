@@ -17,15 +17,22 @@ router.get("/palette", async (req, res) => {
   }
 });
 
-router.get("/product", async (req, res) => {
+router.get("/page", async (req, res) => {
   try {
-    const result = await Perfume.find({
-      attributes: ['_id', 'perfume_name']
-    })
+    const result = await Perfume.find()
+    .select("perfume_name")
     .populate({
       path: "moods",
       populate: [{
         path: "mood1",
+        options: { retainNullValues: true }
+      },
+      {
+        path: "mood2",
+        options: { retainNullValues: true }
+      },
+      {
+        path: "mood3",
         options: { retainNullValues: true }
       }]
     });
