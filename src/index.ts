@@ -13,7 +13,7 @@ app.use(express.json());
 app.use("/api/search", require("./api/search"));
 app.use("/api/product", require("./api/product"));
 //app.use("/api/home", require("./api/home"));
-app.use("/api/colfumetest", require("./api/colfumetest"));
+app.use("/api/colfume", require("./api/colfumetest"));
 
 // error handler
 app.use(function (err, req, res, next) {
