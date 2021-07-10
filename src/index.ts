@@ -2,11 +2,8 @@ import express from "express";
 const app = express();
 import connectDB from "./Loader/db";
 import cors from "cors";
-import swaggerUi from "swagger-ui-express";
-import YAML from "yamljs";
-import path from "path";
+const { swaggerUi, specs } = require('./modules/swagger');
 
-const swaggerSpec = YAML.load(path.join(__dirname, '../build/swagger.yaml'));
 
 // Connect Database
 app.use(cors());
@@ -19,7 +16,7 @@ app.use("/api/search", require("./api/search"));
 app.use("/api/product", require("./api/product"));
 app.use("/api/colfume", require("./api/colfumetest"));
 app.use("/api/home", require("./api/home"));
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 // error handler
 app.use(function (err, req, res, next) {
