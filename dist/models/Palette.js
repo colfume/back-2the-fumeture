@@ -13,6 +13,8 @@ const PaletteSchema = new mongoose_1.default.Schema({
         type: String,
         require: true,
     },
+}, {
+    versionKey: false //버전키 생성하지 않음
 });
 exports.default = mongoose_1.default.model("Palette", PaletteSchema);
 //# sourceMappingURL=Palette.js.map
