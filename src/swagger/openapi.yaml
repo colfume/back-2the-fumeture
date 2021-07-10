@@ -1,0 +1,9 @@
+openapi: '3.0.0'
+info:
+  version: 1.0.0
+  title: Colfume Web API docs
+  description: Colfume Web TEAM의 API 문서입니다.
+  license:
+    name: MIT
+servers:
+  - url: https://colfume.com/
