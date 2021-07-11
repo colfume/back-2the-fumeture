@@ -84,6 +84,9 @@ router.get("/filter/style/:styleName", async (req, res) => {
         { style_name : req.params.styleName },
         { attributes: ['_id'] }
       );
+      if(!styleId) {
+        return res.status(400).send("필요한 값이 없습니다.");
+      };
       styleId = styleId._id.toString();
 
       const filtered_perfume = await Perfume.find().or(
@@ -111,6 +114,10 @@ router.get("/filter/style/:styleName", async (req, res) => {
           ]   
         },
       )
+
+      if(!filtered_perfume) {
+        return res.status(400).send("필요한 값이 없습니다.");
+      };
 
       res.json({ data: filtered_perfume, message: "스타일 향수 정보 불러오기 성공" });
 
