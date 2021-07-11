@@ -19,7 +19,7 @@ router.post("/test", async (req, res) => {
       res.status(400).json({ errors: [{ message: "질문에 대한 답변이 업써요" }]});
     }
     // 3. 질문에 따른 컬러 가중치를 계산합니다.
-    // 3. 컬러를 선언해줍니다. (컬러 총 8개)
+    // 3-1. 컬러를 선언해줍니다. (컬러 총 8개)
     let rp : number = 0;
     let op : number = 0;
     let vp : number = 0;
@@ -29,12 +29,14 @@ router.post("/test", async (req, res) => {
     let pip : number = 0;
     let wp : number = 0;
 
+    // 3-2. 컬러(string)와 컬러값(number)이 각각 담긴 배열을 생성합니다.
     // rp: red point ...
     let colorPalette = [ 
       ['red', rp], ['orange', op], ['vanila', vp], ['green', gp], 
-      ['sky', sp], ['pupple', pup], ['pink', pip], ['white', wp] 
+      ['sky', sp], ['purple', pup], ['pink', pip], ['white', wp] 
     ];
 
+    // 3-3. 계산하는 로직을 구현합니다.
     // 질문 1번
     if( answer1 === 1 ){
       vp += 3;
@@ -116,35 +118,28 @@ router.post("/test", async (req, res) => {
       sp += 3;
       pup += 3;
     }
+    console.log( "Q7 : ", rp, op, vp, gp, sp, pup, pip, wp );
 
-    // 색깔 배열
-    const colorPalette2 = [ rp, op, vp, gp, sp, pup, pip, wp ];
+    // 4. 
+    // 4-1. 계산된 컬러값을 colorPoint 배열로 생성합니다.
+    const colorPoint = [ rp, op, vp, gp, sp, pup, pip, wp ];
     
-    // 4-1. 가장 점수가 높은 것은 몇점인지 찾고, 그 점수가 가지는 인덱스값을 찾습니다.
-    const max_color_sum = Math.max.apply( null, colorPalette2 );
+    // 4-2. 가장 점수가 높은 컬러값(max_color_sum)을 찾습니다.
+    const max_color_sum = Math.max.apply( null, colorPoint );
     console.log( "max color sum : ", max_color_sum );
 
-    // 4-2. 최종적으로 가장 점수가 높은 컬러를 찾습니다.
-    const max_color_index = colorPalette2.indexOf(max_color_sum);
+    // 4-3. max_color_sum을 인덱스로 가지는 max_color_index를 찾습니다.
+    const max_color_index = colorPoint.indexOf(max_color_sum);
     console.log( "max color index : ", max_color_index );
     
-    // 4-3. 4-2의 인덱스 값을 colorPalette에 적용하여 컬러를 찾습니다.
-    const max_color_name = colorPalette[max_color_index][0];
+    // 4-4. 4-3의 인덱스 값을 colorPalette에 적용하여 컬러를 찾습니다.
+    const max_color_name = colorPalette[max_color_index][0].toString();
     console.log( "max color name : ", max_color_name );
-    console.log(typeof(max_color_name));
 
-    // 5. Palette 테이블에서 이름이 같은 컬럼을 찾고, 반환합니다.
+    // 5. Palette 테이블에서 max_color_name과 같은 컬럼을 찾고, 반환합니다.
+    const result = await Palette.findOne({ palette_name: max_color_name }).exec();
     
-    const result = await Palette.find()
-    .select({ palette_name: 'pink' })
-    .limit(1);
-    
-    /*
-    const palettes = await Palette.findOne({ palette_name: max_color_name })
-    .exec();
-    */
     // 6-1. 컬러반환이 잘 됐을 경우
-
     res.status(200).json({ data: result, message: "컬퓸테스트 결과조회 성공했습니다." });
   } catch (error) {
     // 6-2. 컬러반환에 실패했을 경우
