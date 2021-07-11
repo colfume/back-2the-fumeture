@@ -13,7 +13,13 @@ const router = express.Router();
 router.get("/keyword", async (req, res) => {
   try {
       const moods = await Mood.find();
+      if(!moods) {
+        return res.status(400).send("필요한 값이 없습니다.");
+      };
       const styles = await Style.find();
+      if(!styles) {
+        return res.status(400).send("필요한 값이 없습니다.");
+      };
       res.json({ moods: moods, styles: styles, message: "무드, 스타일 불러오기 성공" });
 
   } catch (error) {
