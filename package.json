@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "dev": "ts-node src",
+    "start": "tsc && node build/app.js",
+    "api-docs": "swagger-cli bundle ./src/swagger/openapi.yaml --outfile build/swagger.yaml --type yaml",
+    "predev": "npm run api-docs",
+    "dev": "nodemon --exec ts-node src/app.ts",
     "build": "tsc && node dist",
     "test": "nodemon"
   },
@@ -21,6 +24,7 @@
     "multer": "^1.4.2",
     "request": "^2.88.2",
     "swagger-cli": "^4.0.4",
+    "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.6",
     "yamljs": "^0.3.0"
   },

@@ -13,21 +13,69 @@ const PerfumeSchema = new mongoose_1.default.Schema({
         type: String,
         require: true,
     },
-    color_id: {
-        type: mongoose_1.default.SchemaTypes.ObjectId,
-        require: true,
-        ref: "Color"
+    capacity: {
+        type: String,
     },
-    style_id: {
-        type: mongoose_1.default.SchemaTypes.ObjectId,
-        require: true,
-        ref: "Style"
+    price: {
+        type: String,
     },
-    mood_id: {
-        type: mongoose_1.default.SchemaTypes.ObjectId,
+    vitality: {
+        type: String,
         require: true,
-        ref: "Mood"
     },
+    colors: [
+        {
+            color1: {
+                type: Number,
+                require: true,
+            },
+            color2: {
+                type: Number,
+                require: true,
+            },
+            color3: {
+                type: Number,
+                require: true,
+            },
+            _id: false
+        },
+    ],
+    styles: [
+        {
+            style1: {
+                type: String,
+                require: true,
+                ref: "Style"
+            },
+            style2: {
+                type: String,
+                ref: "Style"
+            },
+            style3: {
+                type: String,
+                ref: "Style"
+            },
+            _id: false
+        },
+    ],
+    moods: [
+        {
+            mood1: {
+                type: String,
+                require: true,
+                ref: "Mood"
+            },
+            mood2: {
+                type: String,
+                ref: "Mood"
+            },
+            mood3: {
+                type: String,
+                ref: "Mood"
+            },
+            _id: false,
+        },
+    ],
     description: {
         type: String,
         require: true,
@@ -53,6 +101,8 @@ const PerfumeSchema = new mongoose_1.default.Schema({
         require: true,
         ref: "Palette"
     },
+}, {
+    versionKey: false //버전키 생성하지 않음
 });
 exports.default = mongoose_1.default.model("Perfume", PerfumeSchema);
 //# sourceMappingURL=Perfume.js.map
