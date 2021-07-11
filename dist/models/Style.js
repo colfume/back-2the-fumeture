@@ -9,6 +9,8 @@ const StyleSchema = new mongoose_1.default.Schema({
         type: String,
         require: true,
     },
+}, {
+    versionKey: false //버전키 생성하지 않음
 });
 exports.default = mongoose_1.default.model("Style", StyleSchema);
 //# sourceMappingURL=Style.js.map
