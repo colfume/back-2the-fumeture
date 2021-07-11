@@ -20,110 +20,132 @@ router.post("/test", async (req, res) => {
     }
     // 3. 질문에 따른 컬러 가중치를 계산합니다.
     // 3. 컬러를 선언해줍니다. (컬러 총 8개)
-    let red : number = 0;
-    let orange : number = 0;
-    let vanila : number = 0;
-    let green : number = 0;
-    let sky : number = 0;
-    let purple : number = 0;
-    let pink : number = 0;
-    let white : number = 0;
+    let rp : number = 0;
+    let op : number = 0;
+    let vp : number = 0;
+    let gp : number = 0;
+    let sp : number = 0;
+    let pup : number = 0;
+    let pip : number = 0;
+    let wp : number = 0;
+
+    // rp: red point ...
+    let colorPalette = [ 
+      ['red', rp], ['orange', op], ['vanila', vp], ['green', gp], 
+      ['sky', sp], ['pupple', pup], ['pink', pip], ['white', wp] 
+    ];
 
     // 질문 1번
     if( answer1 === 1 ){
-      vanila += 3;
-      orange += 3;
+      vp += 3;
+      op += 3;
     }
     else if( answer1 === 2 ){
-      red += 1;
-      green += 1;
+      rp += 1;
+      gp += 1;
     };
-    console.log( "Q1 : ", red, orange, vanila, green, sky, purple, pink, white );
+    console.log( "Q1 : ", rp, op, vp, gp, sp, pup, pip, wp );
     // 질문 2번
     if( answer2 === 1 ){
-      red += 3;
-      white += 3;
+      rp += 3;
+      wp += 3;
     }
     else if( answer2 === 2 ){
-      orange += 3;
-      sky += 3;
-      green += 3;
-      purple += 3;
+      op += 3;
+      sp += 3;
+      gp += 3;
+      pup += 3;
     };
-    console.log( "Q2 : ", red, orange, vanila, green, sky, purple, pink, white );
+    console.log( "Q2 : ", rp, op, vp, gp, sp, pup, pip, wp );
     // 질문 3번
     if( answer3 === 1 ){
-      red += 3;
-      purple += 3;
-      green += 5;
+      rp += 3;
+      pup += 3;
+      gp += 5;
     }
     else if( answer3 === 2 ){
-      vanila += 3;
-      orange += 3;
-      pink += 3;
+      vp += 3;
+      op += 3;
+      pip += 3;
     };
-    console.log( "Q3 : ", red, orange, vanila, green, sky, purple, pink, white );
+    console.log( "Q3 : ", rp, op, vp, gp, sp, pup, pip, wp );
     // 질문 4번
     if( answer4 === 1 ){
-      green += 5;
-      red += 3;
-      purple += 3;
+      gp += 5;
+      rp += 3;
+      pup += 3;
     }
     else if( answer4 === 2 ){
-      vanila += 3;
-      orange += 3;
-      pink += 3;
+      vp += 3;
+      op += 3;
+      pip += 3;
     };
-    console.log( "Q4 : ", red, orange, vanila, green, sky, purple, pink, white );
+    console.log( "Q4 : ", rp, op, vp, gp, sp, pup, pip, wp );
     // 질문 5번
     if( answer5 === 1 ){
-      purple += 3;
-      red += 1; 
+      pup += 3;
+      rp += 1; 
     }
     else if( answer5 === 2 ){
-      orange += 3;
-      sky += 3;
-      white += 3;
-      pink += 1;
-      vanila += 1;
+      op += 3;
+      sp += 3;
+      wp += 3;
+      pip += 1;
+      vp += 1;
     }
-    console.log( "Q5 : ", red, orange, vanila, green, sky, purple, pink, white );
+    console.log( "Q5 : ", rp, op, vp, gp, sp, pup, pip, wp );
     // 질문 6번
     if( answer6 === 1 ){
-      red += 3; 
-      green += 3;
-      purple += 3;
-      sky += 3;
+      rp += 3; 
+      gp += 3;
+      pup += 3;
+      sp += 3;
     }
     else if( answer6 === 2 ){
-      orange += 3;
-      white += 3;
-      pink += 3;
+      op += 3;
+      wp += 3;
+      pip += 3;
     };
-    console.log( "Q6 : ", red, orange, vanila, green, sky, purple, pink, white );
+    console.log( "Q6 : ", rp, op, vp, gp, sp, pup, pip, wp );
     // 질문 7번
     if( answer7 === 1 ){
-      green += 5;
-      white += 1;
+      gp += 5;
+      wp += 1;
     }
     else if( answer7 === 2 ){
-      sky += 3;
-      purple += 3;
+      sp += 3;
+      pup += 3;
     }
 
     // 색깔 배열
-    const colorPalette = [ red, orange, vanila, green, sky, purple, pink, white ];
+    const colorPalette2 = [ rp, op, vp, gp, sp, pup, pip, wp ];
     
-    // 4. 가장 점수가 높은 것은 몇점인지 찾고, 그 점수가 가지는 인덱스값을 찾습니다.
-    const max_color_sum = Math.max.apply( null, colorPalette );
+    // 4-1. 가장 점수가 높은 것은 몇점인지 찾고, 그 점수가 가지는 인덱스값을 찾습니다.
+    const max_color_sum = Math.max.apply( null, colorPalette2 );
     console.log( "max color sum : ", max_color_sum );
 
-    // 5. 최종적으로 가장 점수가 높은 컬러를 찾습니다.
-    const max_color_index = colorPalette.indexOf(max_color_sum);
+    // 4-2. 최종적으로 가장 점수가 높은 컬러를 찾습니다.
+    const max_color_index = colorPalette2.indexOf(max_color_sum);
     console.log( "max color index : ", max_color_index );
     
+    // 4-3. 4-2의 인덱스 값을 colorPalette에 적용하여 컬러를 찾습니다.
+    const max_color_name = colorPalette[max_color_index][0];
+    console.log( "max color name : ", max_color_name );
+    console.log(typeof(max_color_name));
+
+    // 5. Palette 테이블에서 이름이 같은 컬럼을 찾고, 반환합니다.
+    
+    const result = await Palette.find()
+    .select({ palette_name: 'pink' })
+    .limit(1);
+    
+    /*
+    const palettes = await Palette.findOne({ palette_name: max_color_name })
+    .exec();
+    */
     // 6-1. 컬러반환이 잘 됐을 경우
-    res.status(200).json({ data: max_color_index, message: "컬퓸테스트 결과조회 성공했습니다." });
+
+    res.status(200).json({ data: result, message: "컬퓸테스트 결과조회 성공했습니다." });
   } catch (error) {
     // 6-2. 컬러반환에 실패했을 경우
     console.error(error.message);
