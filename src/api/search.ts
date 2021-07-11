@@ -35,6 +35,9 @@ router.get("/filter/:moodName", async (req, res) => {
         { mood_name : req.params.moodName },
         { attributes: ['_id'] }
       );
+      if(!moodId) {
+        return res.status(400).send("필요한 값이 없습니다.");
+      };
       moodId = moodId._id.toString();
 
       const filtered_perfume = await Perfume.find().or(
@@ -62,6 +65,9 @@ router.get("/filter/:moodName", async (req, res) => {
         ]   
       },
     )
+      if(!filtered_perfume) {
+        return res.status(400).send("필요한 값이 없습니다.");
+      };
 
       res.json({ data: filtered_perfume, message: "무드 향수 정보 불러오기 성공" });
 
