@@ -1,0 +1,49 @@
+openapi: '3.0.0'
+info:
+  version: 1.0.0
+  title: Colfume Server API docs
+  description: Colfume Server's API 문서입니다.
+servers:
+  - url: http://localhost:4300/
+security:
+  - Authorization:
+    - read
+    - write
+paths:
+  /product/detail:
+    $ref: './paths/product-detail.yaml'
+  /product/palette:
+    $ref: './paths/product-palette.yaml'
+  /product/page:
+    $ref: './paths/product-page.yaml'
+schemas:
+  Response:
+    type: object
+    properties:
+      status:
+        type: number
+      data:
+        type: object
+      message:
+        type: string
+responses:
+  BadRequest:
+    description: 잘못된 요청
+    content:
+      application/json:
+        schema: 
+          $ref: '#components/schemas/Response'
+        example:
+          status: 400
+          data: {}
+          message: 잘못된 요청
+  InternalServerError:
+    description: 서버 오류
+    content:
+      application/json:
+        schema:
+          $ref: '#components/schemas/Response'
+        example:
+          status: 500
+          data: {}
+          message: 서버 오류
