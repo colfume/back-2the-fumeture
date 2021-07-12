@@ -6,7 +6,13 @@ const router = express.Router();
 
 router.get("/palette", async (req, res) => {
   try {
-    const result = await Palette.find();
+    /*
+    const result = await Palette.find(
+      { attributes: ['_id', 'palette_name', 'palette_title'] }
+    );
+    */
+    const result = await Palette.find().select(['palette_name', 'palette_img'])
+;
     if (!result) {
       return res.status(400).send("필요한 값이 없습니다.");
     }
