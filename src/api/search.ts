@@ -13,7 +13,13 @@ const router = express.Router();
 router.get("/keyword", async (req, res) => {
   try {
       const moods = await Mood.find();
+      if(!moods) {
+        return res.status(400).send("필요한 값이 없습니다.");
+      };
       const styles = await Style.find();
+      if(!styles) {
+        return res.status(400).send("필요한 값이 없습니다.");
+      };
       res.json({ moods: moods, styles: styles, message: "무드, 스타일 불러오기 성공" });
 
   } catch (error) {
@@ -29,6 +35,9 @@ router.get("/filter/:moodName", async (req, res) => {
         { mood_name : req.params.moodName },
         { attributes: ['_id'] }
       );
+      if(!moodId) {
+        return res.status(400).send("필요한 값이 없습니다.");
+      };
       moodId = moodId._id.toString();
 
       const filtered_perfume = await Perfume.find().or(
@@ -56,6 +65,9 @@ router.get("/filter/:moodName", async (req, res) => {
         ]   
       },
     )
+      if(!filtered_perfume) {
+        return res.status(400).send("필요한 값이 없습니다.");
+      };
 
       res.json({ data: filtered_perfume, message: "무드 향수 정보 불러오기 성공" });
 
@@ -72,6 +84,9 @@ router.get("/filter/style/:styleName", async (req, res) => {
         { style_name : req.params.styleName },
         { attributes: ['_id'] }
       );
+      if(!styleId) {
+        return res.status(400).send("필요한 값이 없습니다.");
+      };
       styleId = styleId._id.toString();
 
       const filtered_perfume = await Perfume.find().or(
@@ -99,6 +114,10 @@ router.get("/filter/style/:styleName", async (req, res) => {
           ]   
         },
       )
+
+      if(!filtered_perfume) {
+        return res.status(400).send("필요한 값이 없습니다.");
+      };
 
       res.json({ data: filtered_perfume, message: "스타일 향수 정보 불러오기 성공" });
 

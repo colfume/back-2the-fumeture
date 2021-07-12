@@ -146,6 +146,9 @@ router.get("/recommand", async (req, res) => {
       ]   
     }, 
   );
+    if(!result) {
+      return res.status(400).send("필요한 값이 없습니다.");
+    };
 
     const numbers = Math.floor(Math.random() * 6);
     const arr = result[numbers];
