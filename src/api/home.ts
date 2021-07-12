@@ -63,7 +63,7 @@ router.get("/recommand", async (req, res) => {
           path: "perfume3",
           select: [ 'perfume_img', 'perfume_name' ],
           options: { retainNullValues: true },
-          populate: [{
+         populate: [{
             path: "moods",
             populate: [{
               path: "mood1",
@@ -158,5 +158,34 @@ router.get("/recommand", async (req, res) => {
     res.status(500).send("서버 내부 에러입니다.");
   }
 });
+
+router.get("/keyword", async (req, res) => {
+  try {
+      const moods = await Mood.find().or(
+        [
+          { "mood_name": "따뜻한" },
+          { "mood_name": "차가운" },
+        ]
+      );
+      if(!moods) {
+        return res.status(400).send("필요한 값이 없습니다.");
+      };
+      const styles = await Style.find().or(
+        [
+          { "style_name": "정돈된 복장" },
+          { "style_name": "캐주얼" },
+        ]
+      );
+      if(!styles) {
+        return res.status(400).send("필요한 값이 없습니다.");
+      };
+      res.json({ moods: moods, styles: styles, message: "무드, 스타일 불러오기 성공" });
+
+  } catch (error) {
+      console.error(error.message);
+      res.status(500).send("서버 내부 에러입니다.");
+  }
+});
+
 
 module.exports = router;
