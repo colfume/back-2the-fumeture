@@ -28,7 +28,7 @@ router.get("/keyword", async (req, res) => {
   }
 });
 
-router.get("/filter/:moodName", async (req, res) => {
+router.get("/filter/mood/:moodName", async (req, res) => {
   try {
 
       let moodId = await Mood.findOne(
