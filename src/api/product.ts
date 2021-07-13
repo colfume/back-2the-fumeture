@@ -4,7 +4,7 @@ import Palette from "../models/Palette";
 
 const router = express.Router();
 
-router.get("/paletteSearch/:paletteNum", async (req, res) => {
+router.get("/:paletteNum", async (req, res) => {
   try {
     const paletteId = await Palette.find(_id => _id === req.params.paletteNum);
     if (!paletteId) {
