@@ -10,7 +10,6 @@ router.get("/:paletteNum", async (req, res) => {
     if (!paletteId) {
       return res.status(400).send("필요한 값이 없습니다.");
     };
-    console.log(paletteId);
 
     const result = await Perfume.find(palette_id => palette_id === paletteId)
     .select(["perfume_name", "perfume_img"])
@@ -39,9 +38,14 @@ router.get("/:paletteNum", async (req, res) => {
   }
 });
 
-router.get("/detail", async (req, res) => {
+router.get("/detail/:perfumeId", async (req, res) => {
   try {
-    const result = await Perfume.find();
+    const perfumeId = await Perfume.find(_id => _id === req.params.perfumeId);
+    if (!perfumeId) {
+      return res.status(400).send("필요한 값이 없습니다.");
+    };
+
+    const result = await Perfume.find(_id => _id === perfumeId);
     if (!result) {
       return res.status(400).send("필요한 값이 없습니다.");
     }
