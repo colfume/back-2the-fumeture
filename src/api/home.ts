@@ -163,8 +163,12 @@ router.get("/keyword", async (req, res) => {
   try {
       const moods = await Mood.find().or(
         [
-          { "mood_name": "따뜻한" },
-          { "mood_name": "차가운" },
+          { "mood_name": "달콤한" },
+          { "mood_name": "시원한" },
+          { "mood_name": "편안한" },
+          { "mood_name": "섹시한" },
+          { "mood_name": "화사한" },
+          { "mood_name": "고급스러운" },
         ]
       );
       if(!moods) {
@@ -172,8 +176,12 @@ router.get("/keyword", async (req, res) => {
       };
       const styles = await Style.find().or(
         [
-          { "style_name": "정돈된 복장" },
-          { "style_name": "캐주얼" },
+          { "style_name": "댄디룩" },
+          { "style_name": "모던룩" },
+          { "style_name": "캐주얼룩" },
+          { "style_name": "오피스룩" },
+          { "style_name": "페미닌룩" },
+          { "style_name": "데이트룩" },
         ]
       );
       if(!styles) {
