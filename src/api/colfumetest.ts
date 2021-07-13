@@ -43,18 +43,18 @@ router.post("/test", async (req, res) => {
       op += 3;
     }
     else if( answer1 === 2 ){
-      rp += 3;
-      gp += 2;
+      rp += 3.8;
+      gp += 2.4;
     };
     console.log( "Q1 : ", rp, op, vp, gp, sp, pup, pip, wp );
     // 질문 2번
     if( answer2 === 1 ){
       rp += 3;
-      wp += 3;
+      wp += 3.5;
     }
     else if( answer2 === 2 ){
       op += 3;
-      sp += 3;
+      sp += 3.6;
       gp += 3;
       pup += 3;
     };
@@ -63,7 +63,7 @@ router.post("/test", async (req, res) => {
     if( answer3 === 1 ){
       rp += 3;
       pup += 3;
-      gp += 4;
+      gp += 3.8;
     }
     else if( answer3 === 2 ){
       vp += 3;
@@ -78,7 +78,7 @@ router.post("/test", async (req, res) => {
       vp += 4;
     }
     else if( answer4 === 2 ){
-      sp += 3;
+      sp += 2.5;
       pip += 3;
       op += 3;
       rp += 3;
@@ -87,20 +87,20 @@ router.post("/test", async (req, res) => {
     // 질문 5번
     if( answer5 === 1 ){
       pup += 3;
-      rp += 2; 
+      rp += 2.4; 
     }
     else if( answer5 === 2 ){
       op += 3;
       sp += 3;
       wp += 3;
-      pip += 2;
-      vp += 2;
+      pip += 2.4;
+      vp += 3.8;
     }
     console.log( "Q5 : ", rp, op, vp, gp, sp, pup, pip, wp );
     // 질문 6번
     if( answer6 === 1 ){
       rp += 3; 
-      gp += 3;
+      gp += 3.7;
       pup += 3;
       sp += 3;
     }
@@ -112,12 +112,12 @@ router.post("/test", async (req, res) => {
     console.log( "Q6 : ", rp, op, vp, gp, sp, pup, pip, wp );
     // 질문 7번
     if( answer7 === 1 ){
-      gp += 4;
-      wp += 1;
+      gp += 3.8;
+      wp += 2.4;
     }
     else if( answer7 === 2 ){
-      sp += 4;
-      pup += 5;
+      sp += 3;
+      pup += 3.8;
     }
     console.log( "Q7 : ", rp, op, vp, gp, sp, pup, pip, wp );
 
