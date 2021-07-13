@@ -94,7 +94,7 @@ const PerfumeSchema = new mongoose.Schema({
     require: true,
   },
   palette_id: {
-    type: mongoose.SchemaTypes.ObjectId,
+    type: Number,
     require: true,
     ref: "Palette"
   },
