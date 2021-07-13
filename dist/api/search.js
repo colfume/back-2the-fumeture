@@ -20,7 +20,15 @@ const router = express_1.default.Router();
 router.get("/keyword", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const moods = yield Mood_1.default.find();
+        if (!moods) {
+            return res.status(400).send("필요한 값이 없습니다.");
+        }
+        ;
         const styles = yield Style_1.default.find();
+        if (!styles) {
+            return res.status(400).send("필요한 값이 없습니다.");
+        }
+        ;
         res.json({ moods: moods, styles: styles, message: "무드, 스타일 불러오기 성공" });
     }
     catch (error) {
@@ -28,9 +36,13 @@ router.get("/keyword", (req, res) => __awaiter(void 0, void 0, void 0, function*
         res.status(500).send("서버 내부 에러입니다.");
     }
 }));
-router.get("/filter/:moodName", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.get("/filter/mood/:moodName", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         let moodId = yield Mood_1.default.findOne({ mood_name: req.params.moodName }, { attributes: ['_id'] });
+        if (!moodId) {
+            return res.status(400).send("필요한 값이 없습니다.");
+        }
+        ;
         moodId = moodId._id.toString();
         const filtered_perfume = yield Perfume_1.default.find().or([
             { "moods.0.mood1": moodId },
@@ -54,6 +66,10 @@ router.get("/filter/:moodName", (req, res) => __awaiter(void 0, void 0, void 0, 
                 },
             ]
         });
+        if (!filtered_perfume) {
+            return res.status(400).send("필요한 값이 없습니다.");
+        }
+        ;
         res.json({ data: filtered_perfume, message: "무드 향수 정보 불러오기 성공" });
     }
     catch (error) {
@@ -64,6 +80,10 @@ router.get("/filter/:moodName", (req, res) => __awaiter(void 0, void 0, void 0, 
 router.get("/filter/style/:styleName", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         let styleId = yield Style_1.default.findOne({ style_name: req.params.styleName }, { attributes: ['_id'] });
+        if (!styleId) {
+            return res.status(400).send("필요한 값이 없습니다.");
+        }
+        ;
         styleId = styleId._id.toString();
         const filtered_perfume = yield Perfume_1.default.find().or([
             { "styles.0.style1": styleId },
@@ -87,6 +107,10 @@ router.get("/filter/style/:styleName", (req, res) => __awaiter(void 0, void 0, v
                 },
             ]
         });
+        if (!filtered_perfume) {
+            return res.status(400).send("필요한 값이 없습니다.");
+        }
+        ;
         res.json({ data: filtered_perfume, message: "스타일 향수 정보 불러오기 성공" });
     }
     catch (error) {

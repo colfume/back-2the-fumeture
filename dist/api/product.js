@@ -16,23 +16,16 @@ const express_1 = __importDefault(require("express"));
 const Perfume_1 = __importDefault(require("../models/Perfume"));
 const Palette_1 = __importDefault(require("../models/Palette"));
 const router = express_1.default.Router();
-router.get("/palette", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.get("/:paletteName", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const result = yield Palette_1.default.find();
-        if (!result) {
+        let paletteId = yield Palette_1.default.findOne({ palette_name: req.params.paletteName }, { attributes: ['_id'] });
+        if (!paletteId) {
             return res.status(400).send("필요한 값이 없습니다.");
         }
-        res.status(200).json({ data: result, message: "팔레트 색상 불러오기 성공했습니다." });
-    }
-    catch (error) {
-        console.error(error.message);
-        res.status(500).send("서버 내부 에러입니다.");
-    }
-}));
-router.get("/page", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const result = yield Perfume_1.default.find()
-            .select("perfume_name")
+        ;
+        paletteId = paletteId._id.toString();
+        const result = yield Perfume_1.default.find({ "palette_id": paletteId })
+            .select(["perfume_name", "perfume_img"])
             .populate({
             path: "moods",
             populate: [{
@@ -58,9 +51,15 @@ router.get("/page", (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         res.status(500).send("서버 내부 에러입니다.");
     }
 }));
-router.get("/detail", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.get("/detail/:perfumeName", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const result = yield Perfume_1.default.find();
+        let perfumeId = yield Perfume_1.default.findOne({ perfume_name: req.params.perfumeName }, { attributes: ['_id'] });
+        if (!perfumeId) {
+            return res.status(400).send("필요한 값이 없습니다.");
+        }
+        ;
+        perfumeId = perfumeId._id.toString();
+        const result = yield Perfume_1.default.find({ "_id": perfumeId });
         if (!result) {
             return res.status(400).send("필요한 값이 없습니다.");
         }
