@@ -13,6 +13,22 @@ const PaletteSchema = new mongoose_1.default.Schema({
         type: String,
         require: true,
     },
+    palette_title: {
+        type: String,
+        require: true,
+    },
+    palette_keyword: {
+        type: String,
+        require: true,
+    },
+    palette_matchColor: {
+        type: String,
+        require: true,
+    },
+    palette_explanation: {
+        type: String,
+        require: true,
+    },
 }, {
     versionKey: false //버전키 생성하지 않음
 });

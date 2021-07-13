@@ -7,10 +7,7 @@ const express_1 = __importDefault(require("express"));
 const app = express_1.default();
 const db_1 = __importDefault(require("./Loader/db"));
 const cors_1 = __importDefault(require("cors"));
-const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
-const yamljs_1 = __importDefault(require("yamljs"));
-const path_1 = __importDefault(require("path"));
-const swaggerSpec = yamljs_1.default.load(path_1.default.join(__dirname, '../build/swagger.yaml'));
+//const { swaggerUi, specs } = require('./modules/swagger');
 // Connect Database
 app.use(cors_1.default());
 db_1.default();
@@ -19,8 +16,9 @@ app.use(express_1.default.json());
 // Define Routes
 app.use("/api/search", require("./api/search"));
 app.use("/api/product", require("./api/product"));
+app.use("/api/colfume", require("./api/colfumetest"));
 app.use("/api/home", require("./api/home"));
-app.use('/api-docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerSpec));
+//app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 // error handler
 app.use(function (err, req, res, next) {
     // set locals, only providing error in development
