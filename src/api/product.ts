@@ -43,14 +43,17 @@ router.get("/:paletteName", async (req, res) => {
   }
 });
 
-router.get("/detail/:perfumeId", async (req, res) => {
+router.get("/detail/:perfumeName", async (req, res) => {
   try {
-    const perfumeId = await Perfume.find(_id => _id === req.params.perfumeId);
+    let perfumeId = await Perfume.findOne(
+      { perfume_name: req.params.perfumeName },
+      { attributes: ['_id'] });
     if (!perfumeId) {
       return res.status(400).send("필요한 값이 없습니다.");
     };
+    perfumeId = perfumeId._id.toString();
 
-    const result = await Perfume.find(_id => _id === perfumeId);
+    const result = await Perfume.find({ "_id": perfumeId });
     if (!result) {
       return res.status(400).send("필요한 값이 없습니다.");
     }

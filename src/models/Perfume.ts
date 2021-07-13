@@ -16,10 +16,6 @@ const PerfumeSchema = new mongoose.Schema({
   price: {
     type: String,
   },
-  vitality: {
-    type: String,
-    require: true,
-  },
   colors: [
     {
       color1: {
