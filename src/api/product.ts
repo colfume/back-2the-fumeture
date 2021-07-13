@@ -1,17 +1,22 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import Perfume from "../models/Perfume";
 import Palette from "../models/Palette";
 
 const router = express.Router();
 
-router.get("/:paletteNum", async (req, res) => {
+router.get("/:paletteName", async (req, res) => {
   try {
-    const paletteId = await Palette.find(_id => _id === req.params.paletteNum);
+    let paletteId = await Palette.findOne(
+      { palette_name: req.params.paletteName },
+      { attributes: ['_id'] });
     if (!paletteId) {
       return res.status(400).send("필요한 값이 없습니다.");
     };
+    paletteId = paletteId._id.toString();
 
-    const result = await Perfume.find(palette_id => palette_id === paletteId)
+    const result = await Perfume.find(
+      { "palette_id": paletteId }
+    )
     .select(["perfume_name", "perfume_img"])
     .populate({
       path: "moods",
