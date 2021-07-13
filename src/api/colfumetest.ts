@@ -32,8 +32,8 @@ router.post("/test", async (req, res) => {
     // 3-2. 컬러(string)와 컬러값(number)이 각각 담긴 배열을 생성합니다.
     // rp: red point ...
     let colorPalette = [ 
-      ['red', rp], ['orange', op], ['vanila', vp], ['green', gp], 
-      ['sky', sp], ['purple', pup], ['pink', pip], ['white', wp] 
+      ['Red', rp], ['Orange', op], ['Vanilla', vp], ['Green', gp], 
+      ['Sky', sp], ['Purple', pup], ['Pink', pip], ['White', wp] 
     ];
 
     // 3-3. 계산하는 로직을 구현합니다.
@@ -43,8 +43,8 @@ router.post("/test", async (req, res) => {
       op += 3;
     }
     else if( answer1 === 2 ){
-      rp += 1;
-      gp += 1;
+      rp += 3;
+      gp += 2;
     };
     console.log( "Q1 : ", rp, op, vp, gp, sp, pup, pip, wp );
     // 질문 2번
@@ -63,7 +63,7 @@ router.post("/test", async (req, res) => {
     if( answer3 === 1 ){
       rp += 3;
       pup += 3;
-      gp += 5;
+      gp += 4;
     }
     else if( answer3 === 2 ){
       vp += 3;
@@ -73,27 +73,28 @@ router.post("/test", async (req, res) => {
     console.log( "Q3 : ", rp, op, vp, gp, sp, pup, pip, wp );
     // 질문 4번
     if( answer4 === 1 ){
-      gp += 5;
-      rp += 3;
-      pup += 3;
+      gp += 3;
+      wp += 4;
+      vp += 4;
     }
     else if( answer4 === 2 ){
-      vp += 3;
-      op += 3;
+      sp += 3;
       pip += 3;
+      op += 3;
+      rp += 3;
     };
     console.log( "Q4 : ", rp, op, vp, gp, sp, pup, pip, wp );
     // 질문 5번
     if( answer5 === 1 ){
       pup += 3;
-      rp += 1; 
+      rp += 2; 
     }
     else if( answer5 === 2 ){
       op += 3;
       sp += 3;
       wp += 3;
-      pip += 1;
-      vp += 1;
+      pip += 2;
+      vp += 2;
     }
     console.log( "Q5 : ", rp, op, vp, gp, sp, pup, pip, wp );
     // 질문 6번
@@ -111,12 +112,12 @@ router.post("/test", async (req, res) => {
     console.log( "Q6 : ", rp, op, vp, gp, sp, pup, pip, wp );
     // 질문 7번
     if( answer7 === 1 ){
-      gp += 5;
+      gp += 4;
       wp += 1;
     }
     else if( answer7 === 2 ){
-      sp += 3;
-      pup += 3;
+      sp += 4;
+      pup += 5;
     }
     console.log( "Q7 : ", rp, op, vp, gp, sp, pup, pip, wp );
 
