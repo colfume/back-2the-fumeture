@@ -49,7 +49,7 @@ router.get("/filter/mood/:moodName", (req, res) => __awaiter(void 0, void 0, voi
             { "moods.0.mood2": moodId },
             { "moods.0.mood3": moodId }
         ])
-            .select(["perfume_name"])
+            .select(["perfume_name", "perfume_img"])
             .populate({
             path: "moods",
             populate: [{
@@ -90,7 +90,7 @@ router.get("/filter/style/:styleName", (req, res) => __awaiter(void 0, void 0, v
             { "styles.0.style2": styleId },
             { "styles.0.style3": styleId }
         ])
-            .select(["perfume_name"])
+            .select(["perfume_name", "perfume_img"])
             .populate({
             path: "styles",
             populate: [{
@@ -125,7 +125,7 @@ router.get("/:keyword", (req, res) => __awaiter(void 0, void 0, void 0, function
             { perfume_name: { $regex: req.params.keyword } },
             { brand: { $regex: req.params.keyword } },
         ]).
-            select(["perfume_name"])
+            select(["perfume_name", "perfume_img"])
             .populate({
             path: "moods",
             populate: [{

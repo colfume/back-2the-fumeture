@@ -16,6 +16,35 @@ const express_1 = __importDefault(require("express"));
 const Perfume_1 = __importDefault(require("../models/Perfume"));
 const Palette_1 = __importDefault(require("../models/Palette"));
 const router = express_1.default.Router();
+router.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const result = yield Perfume_1.default.find()
+            .select(["perfume_name", "perfume_img"])
+            .populate({
+            path: "moods",
+            populate: [{
+                    path: "mood1",
+                    options: { retainNullValues: true }
+                },
+                {
+                    path: "mood2",
+                    options: { retainNullValues: true }
+                },
+                {
+                    path: "mood3",
+                    options: { retainNullValues: true }
+                }]
+        });
+        if (!result) {
+            return res.status(400).send("필요한 값이 없습니다.");
+        }
+        res.status(200).json({ data: result, message: "프로덕트 페이지 불러오기 성공했습니다." });
+    }
+    catch (error) {
+        console.error(error.message);
+        res.status(500).send("서버 내부 에러입니다.");
+    }
+}));
 router.get("/:paletteName", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         let paletteId = yield Palette_1.default.findOne({ palette_name: req.params.paletteName }, { attributes: ['_id'] });
