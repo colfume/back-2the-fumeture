@@ -47,7 +47,7 @@ router.get("/filter/mood/:moodName", async (req, res) => {
           {"moods.0.mood3" : moodId}
         ],
       )
-      .select(["perfume_name"])
+      .select(["perfume_name", "perfume_img"])
       .populate({
         path: "moods",
         populate: [{
@@ -96,7 +96,7 @@ router.get("/filter/style/:styleName", async (req, res) => {
           { "styles.0.style3" : styleId }
         ],
       )
-      .select(["perfume_name"])
+      .select(["perfume_name", "perfume_img"])
       .populate({
           path: "styles",
           populate: [{
@@ -136,7 +136,7 @@ router.get("/:keyword", async (req, res) => {
       { brand: { $regex: req.params.keyword } },
       ]
     ).
-    select(["perfume_name"])
+    select(["perfume_name", "perfume_img"])
     .populate({
       path: "moods",
       populate: [{
