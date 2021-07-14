@@ -90,7 +90,7 @@ const PerfumeSchema = new mongoose.Schema({
     require: true,
   },
   palette_id: {
-    type: mongoose.SchemaTypes.ObjectId,
+    type: String,
     require: true,
     ref: "Palette"
   },
