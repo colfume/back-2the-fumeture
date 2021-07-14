@@ -64,7 +64,7 @@ router.get("/:paletteName", async (req, res) => {
     if (!result) {
       return res.status(400).send("필요한 값이 없습니다.");
     }
-    res.status(200).json({ data: result, message: "프로덕트 페이지 불러오기 성공했습니다." });
+    res.status(200).json({ data: result, message: "전체 프로덕트 불러오기 성공했습니다." });
   } catch (error) {
     console.error(error.message);
     res.status(500).send("서버 내부 에러입니다.");
