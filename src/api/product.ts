@@ -88,7 +88,37 @@ router.get("/detail/:perfumeName", async (req, res) => {
       return res.status(400).send("필요한 값이 없습니다.");
     }
 
-    const result = await Perfume.find({ "_id": perfumeId });
+    const result = await Perfume.find({ "_id": perfumeId })
+    .populate({
+      path: "styles",
+      populate: [{
+        path: "style1",
+        options: { retainNullValues: true }
+      },
+      {
+        path: "style2",
+        options: { retainNullValues: true }
+      },
+      {
+        path: "style3",
+        options: { retainNullValues: true }
+      }]
+    })
+    .populate({
+      path: "moods",
+      populate: [{
+        path: "mood1",
+        options: { retainNullValues: true }
+      },
+      {
+        path: "mood2",
+        options: { retainNullValues: true }
+      },
+      {
+        path: "mood3",
+        options: { retainNullValues: true }
+      }]
+    });
     if (!result) {
       return res.status(400).send("필요한 값이 없습니다.");
     }
