@@ -93,7 +93,7 @@ router.get("/detail/:perfumeName", async (req, res) => {
       path: "colors",
       populate: [{
         path: "color1",
-        options: { retainNullValues: true }
+        options: { retainNullValues: true },
       },
       {
         path: "color2",
