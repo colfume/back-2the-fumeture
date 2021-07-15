@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const config_1 = __importDefault(require("../config"));
+const Color_1 = __importDefault(require("../models/Color"));
 const Mood_1 = __importDefault(require("../models/Mood"));
 const Palette_1 = __importDefault(require("../models/Palette"));
 const Perfume_1 = __importDefault(require("../models/Perfume"));
@@ -40,6 +41,9 @@ const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {
         });
         Style_1.default.createCollection().then(function (collection) {
             console.log("스타일 컬렉션 생성 완료");
+        });
+        Color_1.default.createCollection().then(function (collection) {
+            console.log("컬러 컬렉션 생성 완료");
         });
         console.log("Mongoose Connected ...");
     }

@@ -9,6 +9,10 @@ const ColorSchema = new mongoose_1.default.Schema({
         type: String,
         require: true,
     },
+    color_img: {
+        type: String,
+        require: true,
+    }
 }, {
     versionKey: false //버전키 생성하지 않음
 });
