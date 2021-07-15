@@ -22,16 +22,19 @@ const PerfumeSchema = new mongoose_1.default.Schema({
     colors: [
         {
             color1: {
-                type: Number,
+                type: String,
                 require: true,
+                ref: "Palette"
             },
             color2: {
-                type: Number,
+                type: String,
                 require: true,
+                ref: "Palette"
             },
             color3: {
-                type: Number,
+                type: String,
                 require: true,
+                ref: "Palette"
             },
             _id: false
         },
