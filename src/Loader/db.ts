@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import config from "../config";
+import Color from "../models/Color";
 import Mood from "../models/Mood";
 import Palette from "../models/Palette";
 import Perfume from "../models/Perfume";
@@ -32,6 +33,10 @@ const connectDB = async () => {
 
     Style.createCollection().then(function (collection) {
       console.log("스타일 컬렉션 생성 완료");
+    });
+
+    Color.createCollection().then(function (collection) {
+      console.log("컬러 컬렉션 생성 완료");
     });
 
     console.log("Mongoose Connected ...");

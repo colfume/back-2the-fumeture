@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import Perfume from "../models/Perfume";
 import Palette from "../models/Palette";
+import Color from "../models/Color";
 
 const router = express.Router();
 
@@ -82,12 +83,6 @@ router.get("/detail/:perfumeName", async (req, res) => {
     };
     perfumeId = perfumeId._id.toString();
 
-    const paletteResult = await Palette.find()
-    .select(["palette_name", "palette_img"]);
-    if (!paletteResult) {
-      return res.status(400).send("필요한 값이 없습니다.");
-    }
-
     const result = await Perfume.find({ "_id": perfumeId })
     .populate({
       path: "colors",
@@ -137,7 +132,7 @@ router.get("/detail/:perfumeName", async (req, res) => {
     if (!result) {
       return res.status(400).send("필요한 값이 없습니다.");
     }
-    res.status(200).json({ data: { paletteResult, result , message: "상세 페이지 불러오기 성공했습니다." }});
+    res.status(200).json({ data: result, message: "상세 페이지 불러오기 성공했습니다." });
   } catch (error) {
     console.error(error.message);
     res.status(500).send("서버 내부 에러입니다.");
