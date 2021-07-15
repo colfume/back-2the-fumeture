@@ -90,6 +90,21 @@ router.get("/detail/:perfumeName", async (req, res) => {
 
     const result = await Perfume.find({ "_id": perfumeId })
     .populate({
+      path: "colors",
+      populate: [{
+        path: "color1",
+        options: { retainNullValues: true }
+      },
+      {
+        path: "color2",
+        options: { retainNullValues: true }
+      },
+      {
+        path: "color3",
+        options: { retainNullValues: true }
+      }]
+    })
+    .populate({
       path: "styles",
       populate: [{
         path: "style1",
