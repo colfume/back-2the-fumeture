@@ -10,6 +10,13 @@ const cors_1 = __importDefault(require("cors"));
 //const { swaggerUi, specs } = require('./modules/swagger');
 // Connect Database
 app.use(cors_1.default());
+// Add a list of allowed origins.
+// If you have more origins you would like to add, you can add them to the array below.
+const allowedOrigins = ['http://localhost:3000'];
+const options = {
+    origin: allowedOrigins
+};
+app.use(cors_1.default(options));
 db_1.default();
 app.use(express_1.default.urlencoded());
 app.use(express_1.default.json());
