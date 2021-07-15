@@ -97,7 +97,7 @@ const PerfumeSchema = new mongoose.Schema({
     require: true,
     ref: "Palette"
   },
-  palette_image: {
+  palette_img: {
     type: String,
     require: true,
     ref: "Palette"
