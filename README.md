@@ -4,7 +4,9 @@
 
 ## Find Your Colfume, 컬퓸에서 당신의 색을 찾아보세요!
 > SOPT 28기 18TH APPJAM - TEAM Colfume💨  
-2021.06.26 ~ 2021.07.17
+2021.06.26 ~ 2021.07.17 
+
+<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fcolfume%2Fback-2the-fumeture&count_bg=%236A6A6A&title_bg=%23FF52A2&icon=imgur.svg&icon_color=%23FFFBBE&title=Colfume&edge_flat=false"/></a>
 
 <br>
 
