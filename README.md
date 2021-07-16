@@ -36,11 +36,22 @@
 ## 💚 핵심 기능
 |       기능       |          상세 기능          | 역할 | 진척도 |
 | :--------------: | :-----------------------: | :---: | :----: |
-|     Home Page     |        상세 기능 써줘         | 예시로 정재 |    ☑️       |
-|     Product Page     |        상세 기능 써줘         | 예시로 다인 |    ☑️       |
-|     Detail Page     |        상세 기능 써줘         | 예시로 다인 |    ☑️       |
-|     Test Page     |        상세 기능 써줘         | 예시로 수아 |    ☑️       |
-|     Search Page     |        상세 기능 써줘         | 예시로 정재 |    ☑️       |
+|     Home Page     |       상황에 어울리는 향수 추천 (이미지)        | 정재 |    ☑️       |
+|     Home Page     |       추천 향수에 맞는 Mood 보여주기        | 정재 |    ☑️       |
+|     Product Page     |        컬퓸 DB에 들어간 모든 향수 보여주기      |  다인 |    ☑️       |
+|          |     각 컬러에 해당하는 향수 보여주기 (이미지, Mood 키워드)        | 다인 |    ☑️       |
+|      Detail Page    |        각 향수의 기본 정보 보여주기        |  다인 |    ☑️       |
+|          |        해당 향수의 대표 컬퓸색, 관련 컬러 보여주기        |  다인 |    ☑️       |
+|          |        해당 향수의 Mood 키워드 나타내기        |  다인 |    ☑️       |
+|          |        해당 향수의 Style 키워드 나타내기        |  다인 |    ☑️       |
+|     Color Test Page     |        7가지의 심리 테스트 결과 계산         | 수아 |    ☑️       |
+|        |        유저의 컬퓸색 결과 (이미지, 설명)         | 수아 |    ☑️       |
+|        |        유저의 결과와 궁합이 맞는 컬러         | 수아 |    ☑️       |
+|        |        유저의 결과에 맞는 키워드 제공         | 수아 |    ☑️       |
+|     Search Page     |      Mood 키워드로 향수 찾기        | 정재 |    ☑️       |
+|          |      Style 키워드로 향수 찾기        | 정재 |    ☑️       |
+|          |      검색어 입력으로 향수 찾기        | 정재 |    ☑️       |
+|          |      Search한 향수 보여주기 (이미지, Mood 키워드)        | 정재 |    ☑️       |
 
 
 <br>
@@ -63,7 +74,6 @@
     "test": "nodemon"
   },
   "dependencies": {
-    "@types/cors": "^2.8.10",
     "@types/multer": "^1.4.6",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -74,18 +84,14 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "5.12.10",
     "multer": "^1.4.2",
-    "request": "^2.88.2",
-    "swagger-cli": "^4.0.4",
-    "swagger-ui-express": "^4.1.6",
-    "yamljs": "^0.3.0"
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.11",
     "@types/mongoose": "^5.10.4",
     "@types/node": "^14.17.0",
-    "@types/swagger-ui-express": "^4.1.3",
-    "@types/yamljs": "^0.2.31",
     "nodemon": "^2.0.7",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.3"
