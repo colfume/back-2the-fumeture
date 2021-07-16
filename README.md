@@ -1,5 +1,6 @@
 # 🎨Colfume🔎
 <img src="https://user-images.githubusercontent.com/68318945/124396500-ee45d280-dd44-11eb-9795-27ae3256684e.png">
+<img src="https://user-images.githubusercontent.com/68318945/125960431-444490b8-3949-45aa-a3e8-b310bca25b13.png">
 
 ## Find Your Colfume, 컬퓸에서 당신의 색을 찾아보세요!
 > SOPT 28기 18TH APPJAM - TEAM Colfume💨  
