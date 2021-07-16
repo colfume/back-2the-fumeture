@@ -38,7 +38,7 @@ router.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         if (!result) {
             return res.status(400).send("필요한 값이 없습니다.");
         }
-        res.status(200).json({ data: result, message: "프로덕트 페이지 불러오기 성공했습니다." });
+        res.status(200).json({ data: result, message: "전체 프로덕트 불러오기 성공했습니다." });
     }
     catch (error) {
         console.error(error.message);
@@ -53,7 +53,7 @@ router.get("/:paletteName", (req, res) => __awaiter(void 0, void 0, void 0, func
         }
         ;
         paletteId = paletteId._id.toString();
-        const result = yield Perfume_1.default.find({ "palette_id": paletteId })
+        const result = yield Perfume_1.default.find({ palette_id: paletteId })
             .select(["perfume_name", "perfume_img"])
             .populate({
             path: "moods",
@@ -73,7 +73,7 @@ router.get("/:paletteName", (req, res) => __awaiter(void 0, void 0, void 0, func
         if (!result) {
             return res.status(400).send("필요한 값이 없습니다.");
         }
-        res.status(200).json({ data: result, message: "프로덕트 페이지 불러오기 성공했습니다." });
+        res.status(200).json({ data: result, message: "팔레트 색의 프로덕트 불러오기 성공했습니다." });
     }
     catch (error) {
         console.error(error.message);

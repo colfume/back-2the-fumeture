@@ -22,7 +22,11 @@ const PaletteSchema = new mongoose_1.default.Schema({
         require: true,
     },
     palette_matchColor: {
-        type: String,
+        type: [String],
+        require: true,
+    },
+    palette_matchBg: {
+        type: [String],
         require: true,
     },
     palette_explanation: {
