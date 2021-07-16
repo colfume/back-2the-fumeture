@@ -19,16 +19,19 @@ const PerfumeSchema = new mongoose.Schema({
   colors: [
     {
       color1: {
-        type: Number,
+        type: String,
         require: true,
+        ref: "Color"
       },
       color2: {
-        type: Number,
+        type: String,
         require: true,
+        ref: "Color"
       },
       color3: {
-        type: Number,
+        type: String,
         require: true,
+        ref: "Color"
       },
       _id : false
     },
@@ -94,6 +97,11 @@ const PerfumeSchema = new mongoose.Schema({
     require: true,
     ref: "Palette"
   },
+  palette_img: {
+    type: String,
+    require: true,
+    ref: "Palette"
+  }
 }, {
   versionKey : false //버전키 생성하지 않음
 });

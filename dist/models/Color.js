@@ -12,7 +12,9 @@ const ColorSchema = new mongoose_1.default.Schema({
     color_img: {
         type: String,
         require: true,
-    },
+    }
+}, {
+    versionKey: false //버전키 생성하지 않음
 });
 exports.default = mongoose_1.default.model("Color", ColorSchema);
 //# sourceMappingURL=Color.js.map

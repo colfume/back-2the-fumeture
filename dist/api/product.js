@@ -88,7 +88,52 @@ router.get("/detail/:perfumeName", (req, res) => __awaiter(void 0, void 0, void 
         }
         ;
         perfumeId = perfumeId._id.toString();
-        const result = yield Perfume_1.default.find({ "_id": perfumeId });
+        const result = yield Perfume_1.default.find({ "_id": perfumeId })
+            .populate({
+            path: "colors",
+            populate: [{
+                    path: "color1",
+                    options: { retainNullValues: true },
+                },
+                {
+                    path: "color2",
+                    options: { retainNullValues: true }
+                },
+                {
+                    path: "color3",
+                    options: { retainNullValues: true }
+                }]
+        })
+            .populate({
+            path: "styles",
+            populate: [{
+                    path: "style1",
+                    options: { retainNullValues: true }
+                },
+                {
+                    path: "style2",
+                    options: { retainNullValues: true }
+                },
+                {
+                    path: "style3",
+                    options: { retainNullValues: true }
+                }]
+        })
+            .populate({
+            path: "moods",
+            populate: [{
+                    path: "mood1",
+                    options: { retainNullValues: true }
+                },
+                {
+                    path: "mood2",
+                    options: { retainNullValues: true }
+                },
+                {
+                    path: "mood3",
+                    options: { retainNullValues: true }
+                }]
+        });
         if (!result) {
             return res.status(400).send("필요한 값이 없습니다.");
         }

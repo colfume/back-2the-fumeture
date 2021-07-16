@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import Perfume from "../models/Perfume";
 import Palette from "../models/Palette";
+import Color from "../models/Color";
 
 const router = express.Router();
 
@@ -82,7 +83,52 @@ router.get("/detail/:perfumeName", async (req, res) => {
     };
     perfumeId = perfumeId._id.toString();
 
-    const result = await Perfume.find({ "_id": perfumeId });
+    const result = await Perfume.find({ "_id": perfumeId })
+    .populate({
+      path: "colors",
+      populate: [{
+        path: "color1",
+        options: { retainNullValues: true },
+      },
+      {
+        path: "color2",
+        options: { retainNullValues: true }
+      },
+      {
+        path: "color3",
+        options: { retainNullValues: true }
+      }]
+    })
+    .populate({
+      path: "styles",
+      populate: [{
+        path: "style1",
+        options: { retainNullValues: true }
+      },
+      {
+        path: "style2",
+        options: { retainNullValues: true }
+      },
+      {
+        path: "style3",
+        options: { retainNullValues: true }
+      }]
+    })
+    .populate({
+      path: "moods",
+      populate: [{
+        path: "mood1",
+        options: { retainNullValues: true }
+      },
+      {
+        path: "mood2",
+        options: { retainNullValues: true }
+      },
+      {
+        path: "mood3",
+        options: { retainNullValues: true }
+      }]
+    });
     if (!result) {
       return res.status(400).send("필요한 값이 없습니다.");
     }
