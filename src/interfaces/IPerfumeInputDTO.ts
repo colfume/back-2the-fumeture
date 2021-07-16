@@ -16,5 +16,5 @@ export interface IPerfumeInputDTO {
   base?: string;
   perfume_img: string;
   palette_id: [IPalette];
-  palette_img: [IPalette];
+  palette_img: string;
 }
