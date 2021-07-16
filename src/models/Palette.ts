@@ -22,6 +22,10 @@ const PaletteSchema = new mongoose.Schema({
     type: [String],
     require: true,
   },
+  palette_matchBg: {
+    type: [String],
+    require: true,
+  },
   palette_explanation: {
     type: String,
     require: true,
