@@ -8,7 +8,6 @@ export interface IPerfume {
   brand: string;
   capacity: string;
   price: string;
-  vitality: string;
   colors: [IColor];
   styles: [IStyle];
   moods: [IMood];
@@ -25,7 +24,6 @@ export interface IPerfumeInputDTO {
   brand: string;
   capacity: string;
   price: string;
-  vitality: string;
   colors: [IColor];
   styles: [IStyle];
   moods: [IMood];
@@ -36,4 +34,3 @@ export interface IPerfumeInputDTO {
   palette_id: [IPalette];
   palette_img: [IPalette];
 }
-
