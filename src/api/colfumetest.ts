@@ -138,15 +138,25 @@ router.post("/test", async (req, res) => {
     console.log( "max color name : ", max_color_name );
 
     // 5. Palette 테이블에서 max_color_name과 같은 컬럼을 찾고, 반환합니다.
-    const result = await Palette.findOne({ palette_name: max_color_name }).exec();
+    // const result = await Palette.findOne({ palette_name: max_color_name }).exec();
     
     // 6-1. 컬러반환이 잘 됐을 경우
-    res.status(200).json({ data: result, message: "컬퓸테스트 결과조회 성공했습니다." });
+    res.status(200).json({ data: max_color_name, message: "컬퓸테스트 결과 불러오기 성공했습니다." });
   } catch (error) {
     // 6-2. 컬러반환에 실패했을 경우
     console.error(error.message);
     return res.status(500).send("서버 내부 에러입니다.");
     }
+});
+
+router.get("/:colorName", async (req, res) => {
+  try {
+    const result = await Palette.findOne({ palette_name: req.params.colorName });
+    res.status(200).json({ data: result, message: "테스트 결과 팔레트값 조회 성공했습니다." });
+  } catch (error) {
+    console.log(error.message);
+    return res.status(500).send("서버 내부 에러입니다.");
+  }
 });
 
 module.exports = router;
