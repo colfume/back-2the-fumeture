@@ -152,6 +152,9 @@ router.post("/test", async (req, res) => {
 router.get("/:colorName", async (req, res) => {
   try {
     const result = await Palette.findOne({ palette_name: req.params.colorName });
+    if (!result) {
+      return res.status(400).send("필요한 값이 없습니다.");
+    }
     res.status(200).json({ data: result, message: "테스트 결과 팔레트값 조회 성공했습니다." });
   } catch (error) {
     console.log(error.message);
