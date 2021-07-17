@@ -44,6 +44,8 @@ router.get("/:paletteName", async (req, res) => {
     };
     paletteId = paletteId._id.toString();
 
+    const tes = await Perfume.find().select(["palette_id"]);
+    console.log(tes);
     const result = await Perfume.find(
       { palette_id : paletteId }
     )
