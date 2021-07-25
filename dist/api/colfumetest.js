@@ -49,88 +49,82 @@ router.post("/test", (req, res) => __awaiter(void 0, void 0, void 0, function* (
         if (answer1 === 1) {
             vp += 3;
             op += 3;
+            pip += 2.8;
         }
         else if (answer1 === 2) {
-            rp += 3.8;
-            gp += 2.4;
+            gp += 2.2;
+            rp += 2.8;
         }
         ;
         console.log("Q1 : ", rp, op, vp, gp, sp, pup, pip, wp);
         // 질문 2번
         if (answer2 === 1) {
-            rp += 3;
-            wp += 3.5;
+            wp += 2.5;
+            pip += 2.9;
         }
         else if (answer2 === 2) {
-            op += 3;
-            sp += 3.6;
-            gp += 3;
+            sp += 3.3;
             pup += 3;
         }
         ;
         console.log("Q2 : ", rp, op, vp, gp, sp, pup, pip, wp);
         // 질문 3번
         if (answer3 === 1) {
-            rp += 3;
+            rp += 2.8;
             pup += 3;
-            gp += 3.8;
+            gp += 2.6;
         }
         else if (answer3 === 2) {
-            vp += 3;
-            op += 3;
-            pip += 3;
+            vp += 3.9;
+            op += 3.2;
+            pip += 2.8;
+            sp += 3.1;
         }
         ;
         console.log("Q3 : ", rp, op, vp, gp, sp, pup, pip, wp);
         // 질문 4번
         if (answer4 === 1) {
-            gp += 3;
-            wp += 4;
-            vp += 4;
+            wp += 3.2;
+            vp += 2.6;
         }
         else if (answer4 === 2) {
-            sp += 2.5;
-            pip += 3;
-            op += 3;
-            rp += 3;
+            sp += 2.8;
+            op += 3.1;
+            rp += 2.4;
         }
         ;
         console.log("Q4 : ", rp, op, vp, gp, sp, pup, pip, wp);
         // 질문 5번
         if (answer5 === 1) {
-            pup += 3;
-            rp += 2.4;
+            rp += 2.2;
         }
         else if (answer5 === 2) {
-            op += 3;
-            sp += 3;
-            wp += 3;
-            pip += 2.4;
-            vp += 3.8;
+            op += 3.4;
+            wp += 2.8;
+            pip += 2.8;
+            vp += 2.3;
         }
         console.log("Q5 : ", rp, op, vp, gp, sp, pup, pip, wp);
         // 질문 6번
         if (answer6 === 1) {
-            rp += 3;
-            gp += 3.7;
+            rp += 2.2;
+            gp += 3.5;
             pup += 3;
-            sp += 3;
         }
         else if (answer6 === 2) {
-            op += 3;
-            wp += 3;
-            pip += 3;
+            wp += 2.2;
+            pip += 2.1;
         }
         ;
         console.log("Q6 : ", rp, op, vp, gp, sp, pup, pip, wp);
         // 질문 7번
         if (answer7 === 1) {
-            gp += 3.8;
-            wp += 2.4;
+            gp += 3.3;
         }
         else if (answer7 === 2) {
-            sp += 3;
-            pup += 3.8;
+            wp += 2.1;
+            sp += 3.2;
+            pup += 3.5;
         }
         console.log("Q7 : ", rp, op, vp, gp, sp, pup, pip, wp);
         // 4. 
