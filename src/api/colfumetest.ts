@@ -16,7 +16,7 @@ router.post("/test", async (req, res) => {
   try {  
     // 2. 만약 질문을 받지 않은 것이 있다면, 오류!
     if ( !answer1 || !answer2 || !answer3 || !answer4 || !answer5 || !answer6 || !answer7 ) {
-      res.status(400).json({ errors: [{ message: "질문에 대한 답변이 업써요" }]});
+      res.status(400).json({ errors: [{ message: "질문에 대한 답변이 부족하거나 없습니다" }]});
     }
     // 3. 질문에 따른 컬러 가중치를 계산합니다.
     // 3-1. 컬러를 선언해줍니다. (컬러 총 8개)
@@ -131,13 +131,10 @@ router.post("/test", async (req, res) => {
     const max_color_name = colorPalette[max_color_index][0].toString();
     console.log( "max color name : ", max_color_name );
 
-    // 5. Palette 테이블에서 max_color_name과 같은 컬럼을 찾고, 반환합니다.
-    // const result = await Palette.findOne({ palette_name: max_color_name }).exec();
-    
-    // 6-1. 컬러반환이 잘 됐을 경우
+    // 5-1. 컬러반환이 잘 됐을 경우
     res.status(200).json({ data: max_color_name, message: "컬퓸테스트 결과 불러오기 성공했습니다." });
   } catch (error) {
-    // 6-2. 컬러반환에 실패했을 경우
+    // 5-2. 컬러반환에 실패했을 경우
     console.error(error.message);
     return res.status(500).send("서버 내부 에러입니다.");
     }
