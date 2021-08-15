@@ -12,7 +12,7 @@ const cors_1 = __importDefault(require("cors"));
 app.use(cors_1.default());
 // Add a list of allowed origins.
 // If you have more origins you would like to add, you can add them to the array below.
-const allowedOrigins = ['http://localhost:3000'];
+const allowedOrigins = ['http://localhost:4300', 'http://colfume.co.kr'];
 const options = {
     origin: allowedOrigins
 };
