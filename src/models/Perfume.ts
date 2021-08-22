@@ -2,6 +2,10 @@ import mongoose from "mongoose";
 import { IPerfume } from "../interfaces/IPerfume";
 
 const PerfumeSchema = new mongoose.Schema({
+  perfume_number: {
+    type: Number,
+    require: false,
+  },
   perfume_name: {
     type: String,
     require: true,

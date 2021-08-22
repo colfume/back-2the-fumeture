@@ -4,6 +4,7 @@ import { IPalette } from "./IPalette";
 import { IColor } from "./IColor";
 
 export interface IPerfume {
+  perfume_number: number;
   perfume_name: string;
   brand: string;
   capacity: string;
@@ -20,6 +21,7 @@ export interface IPerfume {
 }
 
 export interface IPerfumeInputDTO {
+  perfume_number: number;
   perfume_name: string;
   brand: string;
   capacity: string;
