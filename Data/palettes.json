@@ -1,0 +1,129 @@
+[{
+  "_id": {
+    "$oid": "60ec8d4bd7b739ae386f21e1"
+  },
+  "palette_name": "Orange",
+  "palette_img": "https://colfume.s3.ap-northeast-2.amazonaws.com/colfume_color_img/color_orange.png",
+  "palette_title": "주변의 활기를 가득 채워주는 \n당신의 색깔은 Orange ",
+  "palette_keyword": "발랄한",
+  "palette_matchColor": [
+    "White",
+    "Pink"
+  ],
+  "palette_explanation": "Orange는 Red와 Yellow의 혼합색으로 활기차고 외향적인 색깔이에요. \n주변사람들의 기분을 돋우고, 심리적으로 깨어있게 하는 힘을 가지고있어요. \n오렌지를 베어물었을 때 흘러나오는 상큼하고 발랄한 향기가 떠오르는 색깔이에요. \nOrange가 어울리는 당신은 친구관계가 원만하고,//다른사람들 사이에 잘 적응하는 힘을 가지고있어요. \n또한, 예의가 바르며 성격이 밝고 명량해서 사회생활에서도 인기가 있어요. \n동시에 주변사람들에게 관심을 받고싶은 욕구가 많아요. \n그래서 당신은 기꺼이 관종이 되고 싶어하고, 주변에서도 당신을 관종으로 만들고 싶어해요. \n당신에게 주변의 활력을 불어 넣어줄 수 있는 오렌지계열 향수를 써보기를 추천해요! ",
+  "palette_matchBg": [
+    "#FFFFFF",
+    "#FFB8BC"
+  ]
+},{
+  "_id": {
+    "$oid": "60ec8c53d7b739ae386f21df"
+  },
+  "palette_name": "White",
+  "palette_img": "https://colfume.s3.ap-northeast-2.amazonaws.com/colfume_color_img/color_white.png",
+  "palette_title": "세상을 솔직함과 순수함으로 맞서는 \n당신의 색깔은 White",
+  "palette_keyword": "순수한",
+  "palette_matchColor": [
+    "Pink",
+    "Orange"
+  ],
+  "palette_matchBg": [
+    "#FFB8BC",
+    "#FAAA6B"
+  ],
+  "palette_explanation": "White는 순수, 천진함, 완성과 동시에 새로운 시작을 의미해요. \n아기의 베이비 파우더, 화이트 머스크향을 머금은 색깔이에요. \n새하얀 눈이 떠오르기도 하고, 화사하게 피어난 목련이 떠오르기도 해요. \n주변을 새하얗게 정화할 수 있으며, 동시에 주변과 쉽게 동화돼요. \nWhite의 선택을 받은 당신은 항상 깔끔하고, 긍정적이며 낙관적인 사람이에요. \n하지만 때로는 자신만의 뚜렷한 색이 없어 외로움, 공허함을 느끼기도 해요. \n그런 당신에게, 자신만의 색깔을 채워 줄 White계열의 향수를 써보기를 추천해요! "
+},{
+  "_id": {
+    "$oid": "60ecb010d7b739ae386f21e4"
+  },
+  "palette_name": "Vanilla",
+  "palette_img": "https://colfume.s3.ap-northeast-2.amazonaws.com/colfume_color_img/color_vanilla.png",
+  "palette_title": "주변을 따뜻함으로 감싸안아줄\n당신의 색깔은 Vanilla",
+  "palette_keyword": "따뜻한",
+  "palette_matchColor": [
+    "Green"
+  ],
+  "palette_matchBg": [
+    "#8CA65F"
+  ],
+  "palette_explanation": "Vanilla는 행복, 따뜻함, 편안함을 상징하는 색이에요. \n사람은 Vanilla을 봤을 때, 자기도 모르게 포근함을 느낀다고 해요. \n어릴 적 엄마의 품에서 풍기는 포근한 향기가 떠오르는 색깔이에요. \nVanilla이 어울리는 당신은 유창한 말솜씨나 뛰어난 재능이 없어도 주변 사람들//의 마음을 안정시켜주는 포용력을 가지고 있어요. \n말하는 것보다 들어주는 것을 좋아하고, 칭찬과 위로를 잘 해줘요. \n그래서 Vanilla는 다른 사람들이 마음편하게 속마음을 털어놓을 수 있는 안식처//역할을 해줘요. \n당신에게 주변을 따뜻하게 만들어 줄 Vanilla계열 향수를 써보기를 추천해요! "
+},{
+  "_id": {
+    "$oid": "60ec8db3d7b739ae386f21e2"
+  },
+  "palette_name": "Pink",
+  "palette_img": "https://colfume.s3.ap-northeast-2.amazonaws.com/colfume_color_img/color_pink.png",
+  "palette_title": "어디에서나 사랑받는 달콤한 \n당신의 색깔은 Pink ",
+  "palette_keyword": "사랑스러운",
+  "palette_matchColor": [
+    "White",
+    "Orange"
+  ],
+  "palette_matchBg": [
+    "#FFFFFF",
+    "#FAAA6B"
+  ],
+  "palette_explanation": "Pink는 Red의 정열적이고 유혹적인 사랑, White의 순수한 매력이 합쳐진 부드러운 애정을 상징해요. \n과즙을 머금은 달콤한 과일, 수줍게 피어난 꽃향기가 상상되는 색깔이에요. \n사랑스럽고 섬세하며 달콤함과 관련된 즐거움의 모든 것을 표현할 수 있는 색깔은 Pink밖에 없어요. \n봄날의 하늘하늘 아름답게 피어있는 벚꽃이 떠오르기도 하고,//막대사탕을 물고있는 수줍은 소녀가 떠오르기도 해요. \nPink를 선택받은 당신은, 어디에서나 사랑받을 준비가 되어 있는 사람이에요. \n언제나 상냥하게 웃어주며, 분위기를 다채롭고 아름답게 만들어줘요. \n그래서 주변사람들은 당신으로부터 흘러나오는 애정과 편안함의 에너지를 한껏 얻어가요. \n당신의 달콤한 매력을 한 층 더 돋보이게 해줄 Pink계열의 향수를 써보기를 추천해요! "
+},{
+  "_id": {
+    "$oid": "60ec8cccd7b739ae386f21e0"
+  },
+  "palette_name": "Sky",
+  "palette_img": "https://colfume.s3.ap-northeast-2.amazonaws.com/colfume_color_img/color_sky.png",
+  "palette_title": "한곳에 얽매이지 않고 자유로움을 추구하는 \n당신의 색깔은 Sky",
+  "palette_keyword": "자유로운",
+  "palette_matchColor": [
+    "Green"
+  ],
+  "palette_explanation": "Sky는 자리에 머무르지 않고 끊임없이 움직이는 공기, 바람, 하늘, 바다의 자유로움을 상징해요. \n사람들의 마음을 상쾌하고 시원해지게 만들어줘요. \n그래서 사람들은 하늘, 바다나 강을 바라보면서 생각을 정리하곤 하죠. \n시원한 바다향, 비오는 날의 내음, 맑은 공기의 향이 상상되는 색깔이에요. \nSky가 어울리는 당신은 현재에 안주하지 않아요. \n탐구하고 배워가며, 상상을 펼처가는 사람이에요. \n평소에도 호기심이 많은 당신은 주변과의 커뮤니케이션을 좋아하고, 사회성이 뛰어나요. \n유동적이고, 흐름을 잘 따라가며 끊임없이 노력해요. \nSky계열 향수는 바라 보기만해도 박하사탕을 머금은 듯한 시원함을 느낄 수 있어요. \n자유를 추구하는 매력을 가진 당신, 주변 사람들을 시원하고 상쾌하게 만들어 줄 Sky계열의 향수를 써보기를 추천해요! ",
+  "palette_matchBg": [
+    "#8CA65F"
+  ]
+},{
+  "_id": {
+    "$oid": "60ecafc1d7b739ae386f21e3"
+  },
+  "palette_name": "Purple",
+  "palette_img": "https://colfume.s3.ap-northeast-2.amazonaws.com/colfume_color_img/color_purple.png",
+  "palette_title": "남들과 다른 우아함을 타고난\n당신의 색깔은 Purple",
+  "palette_keyword": "우아한",
+  "palette_matchColor": [
+    "Red"
+  ],
+  "palette_matchBg": [
+    "#FF6E65"
+  ],
+  "palette_explanation": "Purple은 평범하지 않다는 의미를 내포하고 있어요.\n불을 상징하는 RED와 물을 상징하는 BLUE의 혼합색인 PURPLE은//그 자체로 모순을 보이기도 하지만, 동시에 신비롭고 고결함을 뜻해요.\n보라색은 명성과 존엄성을 상징하고, 고귀한 왕, 우아한 공작새를 연상시키는 색깔이기도 해요.\nPurple이 어울리는 당신은 사색에 잠기는 것을 즐기고, 철학에도 관심이 많아요.\n4차원이라는 소리를 종종 듣곤 하지만,//천성적으로 직관적이고 기발한 아이디어를 떠올리는 능력이 있어요.\n당신에게 남들과 구별되는 우아함을 돋보이게 해줄 Purple계열 향수를 써보기를 추천해요! "
+},{
+  "_id": {
+    "$oid": "60e8a18fdcf9ecbed85ebf35"
+  },
+  "palette_name": "Red",
+  "palette_img": "https://colfume.s3.ap-northeast-2.amazonaws.com/colfume_color_img/color_red.png",
+  "palette_title": "주변의 시선을 끌어당기는 매력을 가진 \n당신의 색깔은 Red ",
+  "palette_keyword": "매혹적인",
+  "palette_matchColor": [
+    "Purple"
+  ],
+  "palette_matchBg": [
+    "#87698F"
+  ],
+  "palette_explanation": "Red는 매력을 나타내는 고혹적이고 매혹적인 색깔이에요. \n때로는 능동적이고 정열을, 때로는 유혹적이며 자극적인 모습을 떠올리기도 해요. \n나를 유혹하는 무언가에 홀려 다가간 순간 느껴지는 페로몬 향이 떠오르는 색깔이에요. \n유명인사를 맞이하는 길의 대명사인 레드카펫처럼 레드는 화려하고 시선을 사로잡는 힘을 가지고 있어요. \nRed가 어울리는 당신은 주변 사람들의 시선을 사로 잡는 힘을 지니고 있어요. \n말을 많이 하거나 사람들 사이에서 무언가를 하지 않아도, 상대방의 관심을 끌 수 있는 사람이에요. \n당신에게 자신도 모르게 끌리게 되는 특별한 매력을 돋보이게 해줄 레드계열 향수를 써보기를 추천해요!"
+},{
+  "_id": {
+    "$oid": "60edc4a45c2e74d2b347cba2"
+  },
+  "palette_name": "Green",
+  "palette_img": "https://colfume.s3.ap-northeast-2.amazonaws.com/colfume_color_img/color_green.png",
+  "palette_title": "주변의 상황에 휘둘리지 않는 올곧음을 가진 \n당신의 색깔은 Green",
+  "palette_keyword": "안정적인",
+  "palette_matchColor": [
+    "Sky",
+    "Vanilla"
+  ],
+  "palette_matchBg": [
+    "#96BCD2",
+    "#FCE6AE"
+  ],
+  "palette_explanation": "Green은 생명의 색이기도 하며, 안전, 인내를 의미합니다. \n또한 Green은 인테리어를 포함하여 다양한 디자인 요소에서 이용될 정도로,//자연스럽고 안정된 모습을 느끼게 해줘요. \n숲속에 자리한 풀잎들과 나무에서 흘러나오는 향기가 떠오르는 색깔이에요. \nGreen이 어울리는 당신은 주변에 쉽게 흔들리지 않으며, 신뢰할 수 있는 사람이에요. \n당신은 높은 도덕기준을 가지고 있고, 올바른 일을 하는 것은 당신에게 매우 중요해요. \n위험을 무릅쓰지 않고, 행동을 우선시 하지 않으며, 관찰하는 것을 좋아해요. \n당신에게 올곧은 성품과 자연친화적인 매력을 부각시켜줄 Green계열 향수를 써보기를 추천해요! "
+}]
