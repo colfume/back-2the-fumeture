@@ -73,17 +73,16 @@ router.get("/:paletteName", async (req, res) => {
   }
 });
 
-router.get("/detail/:perfumeName", async (req, res) => {
+router.get("/detail/:perfumeId", async (req, res) => {
   try {
-    let perfumeId = await Perfume.findOne(
-      { perfume_name: req.params.perfumeName },
-      { attributes: ['_id'] });
-    if (!perfumeId) {
+    let perfume_id = await Perfume.findOne(
+      { _id: req.params.perfumeId });
+    if (!perfume_id) {
       return res.status(400).send("필요한 값이 없습니다.");
     };
-    perfumeId = perfumeId._id.toString();
+    perfume_id = perfume_id.toString();
 
-    const result = await Perfume.find({ "_id": perfumeId })
+    const result = await Perfume.find({ "_id": perfume_id })
     .populate({
       path: "colors",
       populate: [{
