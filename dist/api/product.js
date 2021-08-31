@@ -80,15 +80,14 @@ router.get("/:paletteName", (req, res) => __awaiter(void 0, void 0, void 0, func
         res.status(500).send("서버 내부 에러입니다.");
     }
 }));
-router.get("/detail/:perfumeName", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+router.get("/detail/:perfumeId", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        let perfumeId = yield Perfume_1.default.findOne({ perfume_name: req.params.perfumeName }, { attributes: ['_id'] });
-        if (!perfumeId) {
+        let perfume_id = yield Perfume_1.default.findOne({ _id: req.params.perfumeId });
+        if (!perfume_id) {
             return res.status(400).send("필요한 값이 없습니다.");
         }
         ;
-        perfumeId = perfumeId._id.toString();
-        const result = yield Perfume_1.default.find({ "_id": perfumeId })
+        const result = yield Perfume_1.default.find({ "_id": perfume_id })
             .populate({
             path: "colors",
             populate: [{

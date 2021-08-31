@@ -80,7 +80,6 @@ router.get("/detail/:perfumeId", async (req, res) => {
     if (!perfume_id) {
       return res.status(400).send("필요한 값이 없습니다.");
     };
-    perfume_id = perfume_id.toString();
 
     const result = await Perfume.find({ "_id": perfume_id })
     .populate({
